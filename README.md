@@ -32,7 +32,8 @@ Insider threats come from trusted users, and their actions hide inside normal ac
 5. **Timing analysis** of training, inference and search cost for every model on the same hardware.
 
 ## Framework
-> **Figure 1.** Framework: model building and prediction process. [PDF](figures/fig_framework.pdf)
+<p align="center"><img src="figures/png/fig_framework.png" width="100%" alt="fig_framework"></p>
+<p align="center"><em><b>Figure 1.</b> Framework: model building and prediction process.</em> <a href="figures/fig_framework.pdf">[PDF]</a></p>
 
 ## Evaluation protocols
 | Protocol | Split unit | Train | Val. | Test | Positive rate, test | Malicious test users seen in training |
@@ -43,7 +44,8 @@ Insider threats come from trusted users, and their actions hide inside normal ac
 
 All searches behind the LOSO results use 2,000 training and 600 validation rows drawn from the LOSO training scenarios, so no test row enters a search. `05_run_hho_search.py` searches on the original split and serves only the original-protocol models.
 
-> **Figure 2.** Rows per user and shared malicious users. [PDF](figures/fig_user_audit.pdf)
+<p align="center"><img src="figures/png/fig_user_audit.png" width="60%" alt="fig_user_audit"></p>
+<p align="center"><em><b>Figure 2.</b> Rows per user and shared malicious users.</em> <a href="figures/fig_user_audit.pdf">[PDF]</a></p>
 
 ## Results
 ### Original protocol
@@ -52,7 +54,8 @@ Every model is at or near 100% accuracy on the row-level split (ROC-AUC 1.000 fo
 ### Search behaviour
 HHO reached zero validation loss in 41 of its 51 evaluations; the five independent random searches in 37 to 42 of 51. Each tuner keeps the first zero-loss configuration it meets.
 
-> **Figure 3.** Validation loss per search evaluation. [PDF](figures/fig_search_loss.pdf)
+<p align="center"><img src="figures/png/fig_search_loss.png" width="60%" alt="fig_search_loss"></p>
+<p align="center"><em><b>Figure 3.</b> Validation loss per search evaluation.</em> <a href="figures/fig_search_loss.pdf">[PDF]</a></p>
 
 ### LOSO results on the unseen scenario r4.2-1
 461 test requests, 69 malicious; threshold 0.5; ten training seeds per model, fifty runs for random search; 95% intervals from a two-level bootstrap over runs and test rows.
@@ -69,7 +72,8 @@ HHO reached zero validation loss in 41 of its 51 evaluations; the five independe
 | BERT-HHO-Meta, default fusion | 0.873 [0.667, 0.993] | 0.468 [0.265, 0.678] | 0.562 [0.359, 0.755] | 0.990 ± 0.025 |
 | **Dynamic BERT-HHO-Meta** | 0.872 [0.669, 0.986] | 0.433 [0.246, 0.628] | 0.532 [0.331, 0.723] | 0.982 ± 0.047 |
 
-> **Figure 4.** Per-run LOSO precision, recall and F1-score. Blue: single runs. Red: mean with 95% bootstrap interval. [PDF](figures/fig_loso_ablation.pdf)
+<p align="center"><img src="figures/png/fig_loso_ablation.png" width="100%" alt="fig_loso_ablation"></p>
+<p align="center"><em><b>Figure 4.</b> Per-run LOSO precision, recall and F1-score. Blue: single runs. Red: mean with 95% bootstrap interval.</em> <a href="figures/fig_loso_ablation.pdf">[PDF]</a></p>
 
 ### Paired tests
 Mean difference, first model minus second, with Holm-adjusted p-value of a two-sided Wilcoxon signed-rank test over ten paired seeds.
@@ -84,9 +88,11 @@ Mean difference, first model minus second, with Holm-adjusted p-value of a two-s
 | HHO fusion vs. default fusion | -0.001 (p = 1.000) | -0.035 (p = 1.000) | -0.030 (p = 1.000) | -0.008 (p = 1.000) |
 | BERT-HHO-Meta vs. TF-IDF + XGBoost | -0.128 (p = 0.027) | -0.567 (p = 0.014) | -0.468 (p = 0.014) | -0.018 (p = 0.014) |
 
-> **Figure 5.** Recall, ROC-AUC and threat scores of the BERT runs. (b) HHO and five random-search configurations all reached zero validation loss. [PDF](figures/fig_seed_scores.pdf)
+<p align="center"><img src="figures/png/fig_seed_scores.png" width="100%" alt="fig_seed_scores"></p>
+<p align="center"><em><b>Figure 5.</b> Recall, ROC-AUC and threat scores of the BERT runs. (b) HHO and five random-search configurations all reached zero validation loss.</em> <a href="figures/fig_seed_scores.pdf">[PDF]</a></p>
 
-> **Figure 6.** LOSO confusion matrices, mean ± SD counts over runs. [PDF](figures/fig_confusion.pdf)
+<p align="center"><img src="figures/png/fig_confusion.png" width="100%" alt="fig_confusion"></p>
+<p align="center"><em><b>Figure 6.</b> LOSO confusion matrices, mean ± SD counts over runs.</em> <a href="figures/fig_confusion.pdf">[PDF]</a></p>
 
 ### Timing
 Mean ± SD over runs, all models timed on the same machine. One HHO search of 51 evaluations took 53 minutes, one random search 56 minutes on average.
@@ -104,7 +110,8 @@ Mean ± SD over runs, all models timed on the same machine. One HHO search of 51
 | **Dynamic BERT-HHO-Meta** | 189.4 ± 12.1 | 7.87 ± 0.86 |
 
 ### Explainability
-> **Figure 7.** Top ten tokens by mean absolute SHAP value, original-protocol model, 40 test rows. [PDF](figures/fig_shap_summary_v3.pdf)
+<p align="center"><img src="figures/png/fig_shap_summary_v3.png" width="60%" alt="fig_shap_summary_v3"></p>
+<p align="center"><em><b>Figure 7.</b> Top ten tokens by mean absolute SHAP value, original-protocol model, 40 test rows.</em> <a href="figures/fig_shap_summary_v3.pdf">[PDF]</a></p>
 
 ## Reproducing the study
 ```bash
@@ -142,7 +149,7 @@ data_raw/          instructions for the raw CERT files (not redistributed)
 results/           final_summary.json and all per-run results
   rerun_loso/      search results, rs_seeds/, loso_ablation/ (test probabilities of every run, raw_runs.json)
 logs/              run logs of the searches and the ablation
-figures/           figures of the paper, vector PDF
+figures/           figures of the paper, vector PDF; png/ holds 300-dpi copies shown in this page
 ```
 
 ## Data and license
