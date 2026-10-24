@@ -1,11 +1,14 @@
-"""Final statistics, tables and figures of the second-round revision, on the leakage-free rerun.
+# Van Van Chau(1,2), Minh Tuan Nguyen(1), and Phayung Meesad(2,*)
+# (1) Faculty of Information Technology, Posts and Telecommunications Institute of Technology,
+#     Ho Chi Minh City, Vietnam, vancv@ptit.edu.vn, minhtuan@ptit.edu.vn
+# (2) Department of Information Technology Management, King Mongkut's University of Technology North Bangkok,
+#     Thailand, phayung.m@itd.kmutnb.ac.th
+# (*) Corresponding author
+#
+"""Final statistics and tables of the study, on the leakage-free rerun.
 
 Reads results/rerun_loso (searches on the LOSO split, ten-seed LOSO ablation, five independent
-random searches). Writes results/final_summary.json and vector PDF figures:
-  fig_search_loss.pdf   loss of every evaluation, HHO and the five random searches
-  fig_loso_ablation.pdf per-run LOSO precision, recall and F1 with mean and 95% interval
-  fig_seed_scores.pdf   recall against ROC-AUC, recall of each selected configuration, threat scores
-  fig_confusion.pdf     LOSO confusion matrices, mean and SD counts
+random searches). Writes results/final_summary.json.
 The random-search control is pooled over five searches (seeds 1-5) x ten training seeds = 50 runs.
 The seed-42 search shares its random stream with the HHO initialization and selects the HHO
 configuration, so it is not used as a control. Intervals come from a two-level bootstrap that
@@ -15,9 +18,6 @@ Holm-corrected within each metric."""
 import json
 import os
 
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import wilcoxon
 from sklearn.metrics import precision_recall_fscore_support, roc_auc_score, accuracy_score, cohen_kappa_score
@@ -25,7 +25,6 @@ from sklearn.metrics import precision_recall_fscore_support, roc_auc_score, accu
 BASE = os.path.dirname(__file__)
 R = os.path.join(BASE, "..", "results", "rerun_loso")
 ABL = os.path.join(R, "loso_ablation")
-FIG = os.path.join(BASE, "..", "figures")
 SEEDS = list(range(1, 11))
 RS = [f"bert_rs_s{k}" for k in range(1, 6)]
 MODELS = [("tfidf_xgboost", "TF-IDF + XGBoost"), ("word2vec_xgboost", "Word2Vec + XGBoost"),
@@ -37,9 +36,6 @@ MODELS = [("tfidf_xgboost", "TF-IDF + XGBoost"), ("word2vec_xgboost", "Word2Vec 
 PAIRS = [("bert_hho", "bert_default"), ("bert_hho", "bert_manual"), ("bert_hho", "bert_rs"),
          ("bert_hho_meta", "bert_hho"), ("bert_default_meta", "bert_default"),
          ("bert_hho_meta", "bert_hho_meta_defaultfusion"), ("bert_hho_meta", "tfidf_xgboost")]
-plt.rcParams.update({"font.family": "Times New Roman", "font.size": 7.5, "axes.linewidth": 0.6,
-                     "pdf.fonttype": 42})
-BLUE, RED, ORANGE = "#1f6fd1", "#d62728", "#e07b00"
 
 y = np.load(os.path.join(ABL, "test_labels.npy"))
 raw = json.load(open(os.path.join(ABL, "raw_runs.json")))
@@ -144,111 +140,6 @@ search = {
 json.dump({"models": summary, "tests": tests, "search": search, "n_test": int(n), "n_pos": int(y.sum()),
            "seeds": SEEDS}, open(os.path.join(BASE, "..", "results", "final_summary.json"), "w"), indent=2)
 
-
-def save(fig, name):
-    fig.savefig(os.path.join(FIG, f"{name}.pdf"))
-    plt.close(fig)
-
-
-# ---- search loss per evaluation
-fig, ax = plt.subplots(figsize=(3.45, 2.2))
-fh = [e["fitness"] for e in hho["evaluations"]]
-for j in rsj:
-    f = [e["fitness"] for e in j["evaluations"]]
-    ax.plot(np.arange(1, 52), f, "x", ms=2.6, color=ORANGE, alpha=0.75, mew=0.6,
-            label="Random search, seeds 1 to 5" if j is rsj[0] else None)
-ax.plot(np.arange(1, len(fh) + 1), fh, "o", ms=2.6, color=BLUE, label="HHO")
-ax.set_xlabel("Evaluation index, 2,000 training and 600 validation rows")
-ax.set_ylabel(r"Validation loss $L=1-S$")
-ax.legend(frameon=False, fontsize=6.5, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2)
-ax.spines[["top", "right"]].set_visible(False)
-fig.tight_layout(pad=0.3)
-save(fig, "fig_search_loss")
-
-# ---- per-run LOSO precision, recall, F1
-fig, axes = plt.subplots(1, 3, figsize=(7.0, 2.6), sharey=True)
-ypos = np.arange(len(MODELS))[::-1]
-jr = np.random.default_rng(7)
-for ax, k, lab in zip(axes, ["precision", "recall", "f1"], ["Precision", "Recall", "F1-score"]):
-    for yy, (m, _) in zip(ypos, MODELS):
-        v = summary[m][k]["values"]
-        ax.scatter(v, yy + jr.uniform(-0.2, 0.2, len(v)), s=7, color=BLUE, alpha=0.5, lw=0, zorder=2)
-        lo, hi = summary[m][k]["ci95"]
-        ax.plot([lo, hi], [yy, yy], color=RED, lw=1.5, zorder=3)
-        ax.plot(summary[m][k]["mean"], yy, "o", ms=3.8, color=RED, mec="white", mew=0.4, zorder=4)
-    ax.set_xlim(-0.03, 1.03)
-    ax.set_xlabel(f"{lab} at threshold 0.5")
-    ax.grid(axis="x", lw=0.3, alpha=0.5)
-axes[0].set_yticks(ypos)
-axes[0].set_yticklabels([nm for _, nm in MODELS])
-fig.text(0.99, 0.005, f"LOSO test set: {n} requests, {int(y.sum())} malicious. Blue dots: single runs, ten per model and "
-         "fifty for random search. Red: mean with 95% bootstrap interval.", ha="right", va="bottom", fontsize=6.3)
-fig.tight_layout(rect=(0, 0.05, 1, 1))
-save(fig, "fig_loso_ablation")
-
-# ---- recall vs AUC, recall per selected configuration, threat scores
-bert = [("bert_default", "BERT, default", "#9e9e9e", "o"), ("bert_manual", "BERT, manual", "#5f5f5f", "s"),
-        ("bert_rs", "BERT, random search", ORANGE, "D"), ("bert_hho", "Dynamic BERT-HHO", BLUE, "^"),
-        ("bert_default_meta", "BERT-Meta, default", "#d9a441", "v"),
-        ("bert_hho_meta_defaultfusion", "BERT-HHO-Meta, default fusion", "#b07cc6", "P"),
-        ("bert_hho_meta", "Dynamic BERT-HHO-Meta", RED, "X")]
-fig, (a, b, c) = plt.subplots(1, 3, figsize=(7.0, 2.15), gridspec_kw={"width_ratios": [1, 0.8, 1.25]})
-for m, name, col, mk in bert:
-    a.scatter(summary[m]["roc_auc"]["values"], summary[m]["recall"]["values"], s=10, color=col, marker=mk,
-              lw=0, alpha=0.8, label=name)
-a.set_xlabel("ROC-AUC")
-a.set_ylabel("Recall at threshold 0.5")
-a.set_xlim(0.8, 1.005); a.set_ylim(-0.05, 1.05)
-a.legend(fontsize=5.4, loc="upper left", frameon=True, facecolor="white", edgecolor="none", framealpha=1,
-         handletextpad=0.2, borderaxespad=0.2)
-a.set_title("(a) Ranking quality and recall", fontsize=7.5, loc="left")
-cfgs = ["bert_hho"] + RS
-labs = ["HHO"] + [f"RS{k}" for k in range(1, 6)]
-for i, m in enumerate(cfgs):
-    v = per_cfg[m]
-    col = BLUE if m == "bert_hho" else ORANGE
-    b.scatter(i + jr.uniform(-0.18, 0.18, len(v)), v, s=9, color=col, alpha=0.6, lw=0)
-    b.plot([i - 0.28, i + 0.28], [np.mean(v)] * 2, color=RED, lw=1.4)
-b.set_xticks(range(len(cfgs))); b.set_xticklabels(labs, fontsize=6.5)
-b.set_ylabel("Recall at threshold 0.5"); b.set_ylim(-0.05, 1.05)
-b.set_title("(b) Configurations with zero validation loss", fontsize=7.5, loc="left")
-for i, (m, name, col, mk) in enumerate(bert):
-    med = [np.median(prob(a_, s)[y == 1]) for a_, s in runs(m)]
-    c.scatter(i + jr.uniform(-0.3, 0.3, len(med)), med, s=8, color=col, marker=mk, lw=0, alpha=0.8)
-c.axhline(0.5, color="#444444", lw=0.7, ls="--")
-c.set_yscale("log"); c.minorticks_off(); c.set_ylim(1e-5, 1.5)
-c.set_xticks(range(len(bert)))
-c.set_xticklabels(["Def.", "Man.", "RS", "HHO", "Meta", "HHO-\nMeta,\nd.f.", "HHO-\nMeta"], fontsize=6,
-                  linespacing=1.3)
-c.set_ylabel("Median threat score,\nmalicious test rows")
-c.set_title("(c) Threat scores; dashed line, threshold 0.5", fontsize=7.5, loc="left")
-for ax_ in (a, b, c):
-    ax_.spines[["top", "right"]].set_visible(False)
-fig.tight_layout(pad=0.3, w_pad=1.0)
-save(fig, "fig_seed_scores")
-
-# ---- confusion matrices
-CM = [("tfidf_xgboost", "(a) TF-IDF + XGBoost"), ("bert_rs", "(b) BERT, random search"),
-      ("bert_hho", "(c) Dynamic BERT-HHO"), ("bert_hho_meta", "(d) Dynamic BERT-HHO-Meta")]
-fig, axes = plt.subplots(1, 4, figsize=(7.0, 2.05))
-for ax, (m, title) in zip(axes, CM):
-    mean, sd = np.array(summary[m]["confusion_mean"]), np.array(summary[m]["confusion_sd"])
-    share = mean / mean.sum(1, keepdims=True)
-    # vector cells (pcolormesh) instead of imshow, so the PDF holds no raster image
-    ax.pcolormesh(np.arange(3) - 0.5, np.arange(3) - 0.5, share, cmap="Blues", vmin=0, vmax=1,
-                  edgecolors="white", linewidth=0.8)
-    ax.set_xlim(-0.5, 1.5); ax.set_ylim(1.5, -0.5); ax.set_aspect("equal")
-    for i in range(2):
-        for j in range(2):
-            ax.text(j, i, f"{mean[i, j]:.1f}\n$\\pm${sd[i, j]:.1f}", ha="center", va="center", fontsize=7,
-                    color="white" if share[i, j] > 0.55 else "#1a1a1a", linespacing=1.35)
-    ax.set_xticks([0, 1]); ax.set_xticklabels(["Benign", "Malicious"])
-    ax.set_yticks([0, 1]); ax.set_yticklabels(["Benign", "Malicious"], rotation=90, va="center")
-    ax.set_title(title, fontsize=7.5, loc="left"); ax.tick_params(length=0)
-    ax.set_xlabel("Predicted class")
-axes[0].set_ylabel("True class")
-fig.tight_layout(pad=0.3, w_pad=1.0)
-save(fig, "fig_confusion")
 
 print(json.dumps({m: {k: round(summary[m][k]["mean"], 3) for k in ["precision", "recall", "f1", "roc_auc"]}
                   for m, _ in MODELS}, indent=1))

@@ -1,4 +1,11 @@
-"""Stream http.csv directly out of archive.zip (Kaggle mirror of CERT r4.2) without ever
+# Van Van Chau(1,2), Minh Tuan Nguyen(1), and Phayung Meesad(2,*)
+# (1) Faculty of Information Technology, Posts and Telecommunications Institute of Technology,
+#     Ho Chi Minh City, Vietnam, vancv@ptit.edu.vn, minhtuan@ptit.edu.vn
+# (2) Department of Information Technology Management, King Mongkut's University of Technology North Bangkok,
+#     Thailand, phayung.m@itd.kmutnb.ac.th
+# (*) Corresponding author
+#
+"""Stream http.csv directly out of archive.zip, a zip of the CERT r4.2 files, without ever
 extracting the full ~84GB file to disk, and take a random sample of benign rows to pair
 with the ground-truth malicious rows already parsed from the CMU answer files."""
 import csv

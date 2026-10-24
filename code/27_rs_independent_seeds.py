@@ -1,3 +1,10 @@
+# Van Van Chau(1,2), Minh Tuan Nguyen(1), and Phayung Meesad(2,*)
+# (1) Faculty of Information Technology, Posts and Telecommunications Institute of Technology,
+#     Ho Chi Minh City, Vietnam, vancv@ptit.edu.vn, minhtuan@ptit.edu.vn
+# (2) Department of Information Technology Management, King Mongkut's University of Technology North Bangkok,
+#     Thailand, phayung.m@itd.kmutnb.ac.th
+# (*) Corresponding author
+#
 """Independent random-search controls for the HHO search (second-round revision).
 
 Why: 26_rerun_searches_loso.py seeds the random search with default_rng(42), the same stream that

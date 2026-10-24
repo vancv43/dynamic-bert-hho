@@ -1,3 +1,10 @@
+# Van Van Chau(1,2), Minh Tuan Nguyen(1), and Phayung Meesad(2,*)
+# (1) Faculty of Information Technology, Posts and Telecommunications Institute of Technology,
+#     Ho Chi Minh City, Vietnam, vancv@ptit.edu.vn, minhtuan@ptit.edu.vn
+# (2) Department of Information Technology Management, King Mongkut's University of Technology North Bangkok,
+#     Thailand, phayung.m@itd.kmutnb.ac.th
+# (*) Corresponding author
+#
 """Dynamic BERT-HHO-Meta: BERT contextual embedding fused with structural/behavioural
 metadata features (content length, digit ratio, URL structure, time-of-day) via a small
 fusion head. Architecturally distinct from every baseline in the paper's related-work
@@ -12,7 +19,7 @@ from sklearn.metrics import (
 from torch.utils.data import Dataset
 from transformers import BertModel, BertTokenizerFast
 
-DEVICE = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
 MODEL_NAME = "bert-base-uncased"
 
 _tokenizer = None

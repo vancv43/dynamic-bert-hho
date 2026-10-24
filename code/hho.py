@@ -1,3 +1,10 @@
+# Van Van Chau(1,2), Minh Tuan Nguyen(1), and Phayung Meesad(2,*)
+# (1) Faculty of Information Technology, Posts and Telecommunications Institute of Technology,
+#     Ho Chi Minh City, Vietnam, vancv@ptit.edu.vn, minhtuan@ptit.edu.vn
+# (2) Department of Information Technology Management, King Mongkut's University of Technology North Bangkok,
+#     Thailand, phayung.m@itd.kmutnb.ac.th
+# (*) Corresponding author
+#
 """Harris Hawks Optimization for BERT hyperparameter search (matches paper Algorithm 1)."""
 import math
 import numpy as np
@@ -8,8 +15,8 @@ BOUNDS = {
     "batch_size": (8, 32),
     "dropout": (0.1, 0.5),
     "weight_decay": (0.0, 0.1),
-    "epochs": (1, 3),          # reduced upper bound for local-compute feasibility (see Limitations)
-    "trainable_layers": (2, 8),  # reduced upper bound for local-compute feasibility (see Limitations)
+    "epochs": (1, 3),          # reduced upper bound to limit search cost
+    "trainable_layers": (2, 8),  # reduced upper bound to limit search cost
 }
 KEYS = list(BOUNDS.keys())
 LB = np.array([BOUNDS[k][0] for k in KEYS])

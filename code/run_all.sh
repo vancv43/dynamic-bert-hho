@@ -25,18 +25,12 @@ echo '[stage] 26_rerun_searches_loso.py: HHO, random search and fusion search on
 $PY 26_rerun_searches_loso.py
 echo '[stage] 19_run_loso_ablation.py: Ten-seed LOSO ablation of nine models'
 REVISION_RESULTS=rerun_loso $PY 19_run_loso_ablation.py
-echo '[stage] 21_make_figures_v3.py: SHAP figure'
-$PY 21_make_figures_v3.py
 echo '[stage] 22_verify_protocol_facts.py: Recomputes the split statistics quoted in the paper'
 $PY 22_verify_protocol_facts.py
-echo '[stage] 23_make_framework_figure.py: Framework figure'
-$PY 23_make_framework_figure.py
-echo '[stage] 24_make_extra_figures.py: User-audit figure'
-$PY 24_make_extra_figures.py
 echo '[stage] 27_rs_independent_seeds.py: Five independent random searches and their LOSO runs'
 REVISION_RESULTS=rerun_loso $PY 27_rs_independent_seeds.py
 echo '[stage] 28_grouped_split_checks.py: Shortcut checks on the user-grouped split'
 $PY 28_grouped_split_checks.py
-echo '[stage] 29_analyze_final.py: Statistics, intervals, tests and result figures'
+echo '[stage] 29_analyze_final.py: Statistics, intervals and paired tests'
 $PY 29_analyze_final.py
 echo '[stage] all stages complete'

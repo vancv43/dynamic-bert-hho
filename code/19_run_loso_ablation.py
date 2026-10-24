@@ -1,3 +1,10 @@
+# Van Van Chau(1,2), Minh Tuan Nguyen(1), and Phayung Meesad(2,*)
+# (1) Faculty of Information Technology, Posts and Telecommunications Institute of Technology,
+#     Ho Chi Minh City, Vietnam, vancv@ptit.edu.vn, minhtuan@ptit.edu.vn
+# (2) Department of Information Technology Management, King Mongkut's University of Technology North Bangkok,
+#     Thailand, phayung.m@itd.kmutnb.ac.th
+# (*) Corresponding author
+#
 """Multi-seed LOSO ablation with saved probabilities and timing (second-round revision).
 
 Protocol (locked before running):
@@ -52,7 +59,9 @@ def set_seed(seed):
 
 
 def sync():
-    if DEVICE.type == "mps":
+    if DEVICE.type == "cuda":
+        torch.cuda.synchronize()
+    elif DEVICE.type == "mps":
         torch.mps.synchronize()
 
 

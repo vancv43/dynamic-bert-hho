@@ -1,3 +1,10 @@
+# Van Van Chau(1,2), Minh Tuan Nguyen(1), and Phayung Meesad(2,*)
+# (1) Faculty of Information Technology, Posts and Telecommunications Institute of Technology,
+#     Ho Chi Minh City, Vietnam, vancv@ptit.edu.vn, minhtuan@ptit.edu.vn
+# (2) Department of Information Technology Management, King Mongkut's University of Technology North Bangkok,
+#     Thailand, phayung.m@itd.kmutnb.ac.th
+# (*) Corresponding author
+#
 """SHAP explainability analysis on the final Dynamic BERT-HHO model."""
 import json
 import os
@@ -22,7 +29,7 @@ def main():
     model.eval()
 
     pipe = TextClassificationPipeline(
-        model=model, tokenizer=tokenizer, device=0 if DEVICE.type == "mps" else -1,
+        model=model, tokenizer=tokenizer, device=0 if DEVICE.type != "cpu" else -1,
         top_k=None, truncation=True, max_length=96,
     )
 

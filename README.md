@@ -4,14 +4,15 @@
 
 ### Explainable Deep Learning for Insider Threat Detection: A Metaheuristic Swarm Intelligence Approach Using Harris Hawks Optimization
 
-**Van Van Chau**<sup>1</sup> · **Minh Tuan Nguyen**<sup>1</sup> · **Phayung Meesad**<sup>2,*</sup>
+**Van Van Chau**<sup>1,2</sup> · **Minh Tuan Nguyen**<sup>1</sup> · **Phayung Meesad**<sup>2,*</sup>
 
-<sup>1</sup> Posts and Telecommunications Institute of Technology, Ho Chi Minh City, Vietnam ·
-<sup>2</sup> King Mongkut's University of Technology North Bangkok, Thailand
+<sup>1</sup> Faculty of Information Technology, Posts and Telecommunications Institute of Technology, Ho Chi Minh City, Vietnam<br>
+<sup>2</sup> Department of Information Technology Management, King Mongkut's University of Technology North Bangkok, Thailand<br>
+<sup>*</sup> Corresponding author
 
 *Artificial Intelligence and Applications*, manuscript #11369 (under review)
 
-![Python](https://img.shields.io/badge/python-3.10-blue) ![PyTorch](https://img.shields.io/badge/PyTorch-2.13-ee4c2c) ![License: MIT](https://img.shields.io/badge/code-MIT-green) ![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey)
+![Python](https://img.shields.io/badge/python-3.10-blue) ![License: MIT](https://img.shields.io/badge/code-MIT-green) ![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey)
 
 </div>
 
@@ -31,8 +32,7 @@ Insider threats come from trusted users, and their actions hide inside normal ac
 5. **Timing analysis** of training, inference and search cost for every model on the same hardware.
 
 ## Framework
-<p align="center"><img src="figures/fig_framework.svg" width="100%" alt="framework"></p>
-<p align="center"><em>Figure 1. Framework: model building and prediction process.</em></p>
+> **Figure 1.** Framework: model building and prediction process. [PDF](figures/fig_framework.pdf)
 
 ## Evaluation protocols
 | Protocol | Split unit | Train | Val. | Test | Positive rate, test | Malicious test users seen in training |
@@ -43,8 +43,7 @@ Insider threats come from trusted users, and their actions hide inside normal ac
 
 All searches behind the LOSO results use 2,000 training and 600 validation rows drawn from the LOSO training scenarios, so no test row enters a search. `05_run_hho_search.py` searches on the original split and serves only the original-protocol models.
 
-<p align="center"><img src="figures/fig_user_audit.svg" width="55%" alt="user audit"></p>
-<p align="center"><em>Figure 2. Rows per user and shared malicious users.</em></p>
+> **Figure 2.** Rows per user and shared malicious users. [PDF](figures/fig_user_audit.pdf)
 
 ## Results
 ### Original protocol
@@ -53,8 +52,7 @@ Every model is at or near 100% accuracy on the row-level split (ROC-AUC 1.000 fo
 ### Search behaviour
 HHO reached zero validation loss in 41 of its 51 evaluations; the five independent random searches in 37 to 42 of 51. Each tuner keeps the first zero-loss configuration it meets.
 
-<p align="center"><img src="figures/fig_search_loss.svg" width="55%" alt="search loss"></p>
-<p align="center"><em>Figure 3. Validation loss per search evaluation.</em></p>
+> **Figure 3.** Validation loss per search evaluation. [PDF](figures/fig_search_loss.pdf)
 
 ### LOSO results on the unseen scenario r4.2-1
 461 test requests, 69 malicious; threshold 0.5; ten training seeds per model, fifty runs for random search; 95% intervals from a two-level bootstrap over runs and test rows.
@@ -71,8 +69,7 @@ HHO reached zero validation loss in 41 of its 51 evaluations; the five independe
 | BERT-HHO-Meta, default fusion | 0.873 [0.667, 0.993] | 0.468 [0.265, 0.678] | 0.562 [0.359, 0.755] | 0.990 ± 0.025 |
 | **Dynamic BERT-HHO-Meta** | 0.872 [0.669, 0.986] | 0.433 [0.246, 0.628] | 0.532 [0.331, 0.723] | 0.982 ± 0.047 |
 
-<p align="center"><img src="figures/fig_loso_ablation.svg" width="100%" alt="LOSO ablation"></p>
-<p align="center"><em>Figure 4. Per-run LOSO precision, recall and F1-score. Blue: single runs. Red: mean with 95% bootstrap interval.</em></p>
+> **Figure 4.** Per-run LOSO precision, recall and F1-score. Blue: single runs. Red: mean with 95% bootstrap interval. [PDF](figures/fig_loso_ablation.pdf)
 
 ### Paired tests
 Mean difference, first model minus second, with Holm-adjusted p-value of a two-sided Wilcoxon signed-rank test over ten paired seeds.
@@ -87,14 +84,12 @@ Mean difference, first model minus second, with Holm-adjusted p-value of a two-s
 | HHO fusion vs. default fusion | -0.001 (p = 1.000) | -0.035 (p = 1.000) | -0.030 (p = 1.000) | -0.008 (p = 1.000) |
 | BERT-HHO-Meta vs. TF-IDF + XGBoost | -0.128 (p = 0.027) | -0.567 (p = 0.014) | -0.468 (p = 0.014) | -0.018 (p = 0.014) |
 
-<p align="center"><img src="figures/fig_seed_scores.svg" width="100%" alt="seed scores"></p>
-<p align="center"><em>Figure 5. Recall, ROC-AUC and threat scores of the BERT runs. (b) HHO and five random-search configurations all reached zero validation loss.</em></p>
+> **Figure 5.** Recall, ROC-AUC and threat scores of the BERT runs. (b) HHO and five random-search configurations all reached zero validation loss. [PDF](figures/fig_seed_scores.pdf)
 
-<p align="center"><img src="figures/fig_confusion.svg" width="100%" alt="confusion matrices"></p>
-<p align="center"><em>Figure 6. LOSO confusion matrices, mean ± SD counts over runs.</em></p>
+> **Figure 6.** LOSO confusion matrices, mean ± SD counts over runs. [PDF](figures/fig_confusion.pdf)
 
 ### Timing
-Apple M1 Pro, Metal backend, shared machine; mean ± SD over runs. One HHO search of 51 evaluations took 53 minutes, one random search 56 minutes on average.
+Mean ± SD over runs, all models timed on the same machine. One HHO search of 51 evaluations took 53 minutes, one random search 56 minutes on average.
 
 | Model | Training, s | Inference, ms per request |
 |---|---:|---:|
@@ -109,8 +104,7 @@ Apple M1 Pro, Metal backend, shared machine; mean ± SD over runs. One HHO searc
 | **Dynamic BERT-HHO-Meta** | 189.4 ± 12.1 | 7.87 ± 0.86 |
 
 ### Explainability
-<p align="center"><img src="figures/fig_shap_summary_v3.svg" width="55%" alt="SHAP"></p>
-<p align="center"><em>Figure 7. Top ten tokens by mean absolute SHAP value, original-protocol model, 40 test rows.</em></p>
+> **Figure 7.** Top ten tokens by mean absolute SHAP value, original-protocol model, 40 test rows. [PDF](figures/fig_shap_summary_v3.pdf)
 
 ## Reproducing the study
 ```bash
@@ -119,7 +113,7 @@ cd code
 bash run_all.sh            # full pipeline in paper order
 python 29_analyze_final.py # statistics, tables and figures from saved runs only
 ```
-`29_analyze_final.py` needs only the files in `results/rerun_loso/`, so every number and figure above can be regenerated in under a minute without retraining. A full rerun of the searches and the ablation takes about one day on an Apple M1 Pro.
+`29_analyze_final.py` needs only the files in `results/rerun_loso/`, so every number above can be regenerated in under a minute without retraining. A full rerun of the searches and the ablation retrains every model and takes about a day.
 
 | Script | Purpose |
 |---|---|
@@ -134,13 +128,10 @@ python 29_analyze_final.py # statistics, tables and figures from saved runs only
 | `10_build_loso_dataset.py` | Leave-one-scenario-out split |
 | `26_rerun_searches_loso.py` | HHO, random search and fusion search on the LOSO training scenarios |
 | `19_run_loso_ablation.py` | Ten-seed LOSO ablation of nine models |
-| `21_make_figures_v3.py` | SHAP figure |
 | `22_verify_protocol_facts.py` | Recomputes the split statistics quoted in the paper |
-| `23_make_framework_figure.py` | Framework figure |
-| `24_make_extra_figures.py` | User-audit figure |
 | `27_rs_independent_seeds.py` | Five independent random searches and their LOSO runs |
 | `28_grouped_split_checks.py` | Shortcut checks on the user-grouped split |
-| `29_analyze_final.py` | Statistics, intervals, tests and result figures |
+| `29_analyze_final.py` | Statistics, intervals and paired tests |
 | `common.py`, `common_meta.py`, `hho.py` | BERT and fusion models, training loop, HHO |
 
 ## Repository layout
@@ -151,7 +142,7 @@ data_raw/          instructions for the raw CERT files (not redistributed)
 results/           final_summary.json and all per-run results
   rerun_loso/      search results, rs_seeds/, loso_ablation/ (test probabilities of every run, raw_runs.json)
 logs/              run logs of the searches and the ablation
-figures/           figures of the paper, vector PDF and SVG
+figures/           figures of the paper, vector PDF
 ```
 
 ## Data and license

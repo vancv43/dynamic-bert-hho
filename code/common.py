@@ -1,3 +1,10 @@
+# Van Van Chau(1,2), Minh Tuan Nguyen(1), and Phayung Meesad(2,*)
+# (1) Faculty of Information Technology, Posts and Telecommunications Institute of Technology,
+#     Ho Chi Minh City, Vietnam, vancv@ptit.edu.vn, minhtuan@ptit.edu.vn
+# (2) Department of Information Technology Management, King Mongkut's University of Technology North Bangkok,
+#     Thailand, phayung.m@itd.kmutnb.ac.th
+# (*) Corresponding author
+#
 """Shared BERT dataset/train/eval utilities for the Dynamic BERT-HHO experiment."""
 import numpy as np
 import torch
@@ -7,7 +14,7 @@ from sklearn.metrics import (
 from torch.utils.data import Dataset
 from transformers import BertForSequenceClassification, BertTokenizerFast
 
-DEVICE = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
 MODEL_NAME = "bert-base-uncased"
 
 _tokenizer = None
@@ -44,7 +51,7 @@ class HttpTextDataset(Dataset):
 def build_model(dropout, trainable_layers):
     model = BertForSequenceClassification.from_pretrained(
         MODEL_NAME, num_labels=2, hidden_dropout_prob=dropout, attention_probs_dropout_prob=dropout,
-        attn_implementation="eager",  # SDPA on MPS (torch>=2.13) rejects attention dropout; eager is numerically the same attention
+        attn_implementation="eager",  # eager attention: same computation, supports attention dropout on every backend
     )
     # freeze all encoder layers except the last `trainable_layers`
     total_layers = len(model.bert.encoder.layer)

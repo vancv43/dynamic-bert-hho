@@ -1,4 +1,4 @@
-[pipeline] using pre-downloaded ../archive.zip (Kaggle mirror, streamed via unzip -p)
+[pipeline] streaming http.csv from archive.zip
 [pipeline] STAGE extract_http_sample
 malicious ids to exclude: 3860 malicious users: 70
 header: ['id', 'date', 'user', 'pc', 'url', 'activity', 'content']
