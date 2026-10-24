@@ -1,0 +1,311 @@
+  RS1 eval#1 fit=0.0000 best=0.0000 elapsed=59s
+  RS1 eval#2 fit=0.0000 best=0.0000 elapsed=147s
+  RS1 eval#3 fit=0.0000 best=0.0000 elapsed=176s
+  RS1 eval#4 fit=0.0000 best=0.0000 elapsed=255s
+  RS1 eval#5 fit=0.0000 best=0.0000 elapsed=295s
+  RS1 eval#6 fit=0.0000 best=0.0000 elapsed=377s
+  RS1 eval#7 fit=0.0000 best=0.0000 elapsed=446s
+  RS1 eval#8 fit=0.0020 best=0.0000 elapsed=520s
+  RS1 eval#9 fit=0.0000 best=0.0000 elapsed=557s
+  RS1 eval#10 fit=0.0098 best=0.0000 elapsed=655s
+  RS1 eval#11 fit=0.0000 best=0.0000 elapsed=748s
+  RS1 eval#12 fit=0.0020 best=0.0000 elapsed=781s
+  RS1 eval#13 fit=0.0000 best=0.0000 elapsed=857s
+  RS1 eval#14 fit=0.0000 best=0.0000 elapsed=927s
+  RS1 eval#15 fit=0.0000 best=0.0000 elapsed=988s
+  RS1 eval#16 fit=0.0000 best=0.0000 elapsed=1053s
+  RS1 eval#17 fit=0.0000 best=0.0000 elapsed=1112s
+  RS1 eval#18 fit=0.0020 best=0.0000 elapsed=1161s
+  RS1 eval#19 fit=0.0000 best=0.0000 elapsed=1236s
+  RS1 eval#20 fit=0.0000 best=0.0000 elapsed=1301s
+  RS1 eval#21 fit=0.0000 best=0.0000 elapsed=1356s
+  RS1 eval#22 fit=0.0000 best=0.0000 elapsed=1423s
+  RS1 eval#23 fit=0.0000 best=0.0000 elapsed=1498s
+  RS1 eval#24 fit=0.0000 best=0.0000 elapsed=1526s
+  RS1 eval#25 fit=0.0000 best=0.0000 elapsed=1575s
+  RS1 eval#26 fit=0.0000 best=0.0000 elapsed=1611s
+  RS1 eval#27 fit=0.0020 best=0.0000 elapsed=1694s
+  RS1 eval#28 fit=0.0000 best=0.0000 elapsed=1778s
+  RS1 eval#29 fit=0.0020 best=0.0000 elapsed=1835s
+  RS1 eval#30 fit=0.0000 best=0.0000 elapsed=1933s
+  RS1 eval#31 fit=0.0000 best=0.0000 elapsed=1967s
+  RS1 eval#32 fit=0.0000 best=0.0000 elapsed=2077s
+  RS1 eval#33 fit=0.0000 best=0.0000 elapsed=2145s
+  RS1 eval#34 fit=0.0000 best=0.0000 elapsed=2272s
+  RS1 eval#35 fit=0.0000 best=0.0000 elapsed=2361s
+  RS1 eval#36 fit=0.0020 best=0.0000 elapsed=2431s
+  RS1 eval#37 fit=0.0039 best=0.0000 elapsed=2480s
+  RS1 eval#38 fit=0.0000 best=0.0000 elapsed=2537s
+  RS1 eval#39 fit=0.0000 best=0.0000 elapsed=2634s
+  RS1 eval#40 fit=0.0000 best=0.0000 elapsed=2716s
+  RS1 eval#41 fit=0.0000 best=0.0000 elapsed=2794s
+  RS1 eval#42 fit=0.0020 best=0.0000 elapsed=2845s
+  RS1 eval#43 fit=0.0000 best=0.0000 elapsed=2873s
+  RS1 eval#44 fit=0.0000 best=0.0000 elapsed=2922s
+  RS1 eval#45 fit=0.0000 best=0.0000 elapsed=3021s
+  RS1 eval#46 fit=0.0000 best=0.0000 elapsed=3071s
+  RS1 eval#47 fit=0.0000 best=0.0000 elapsed=3128s
+  RS1 eval#48 fit=0.0000 best=0.0000 elapsed=3244s
+  RS1 eval#49 fit=0.0000 best=0.0000 elapsed=3287s
+  RS1 eval#50 fit=0.0000 best=0.0000 elapsed=3316s
+  RS1 eval#51 fit=0.0000 best=0.0000 elapsed=3382s
+RS_SEED_DONE 1 {'lr': 2.6079259610312582e-05, 'batch_size': 30.811128711822448, 'dropout': 0.1576638450878535, 'weight_decay': 0.09486494471372439, 'epochs': 1.623662904020971, 'trainable_layers': 4.5399586938354535} 0.0
+  RS2 eval#1 fit=0.0039 best=0.0039 elapsed=76s
+  RS2 eval#2 fit=0.0000 best=0.0000 elapsed=134s
+  RS2 eval#3 fit=0.0000 best=0.0000 elapsed=234s
+  RS2 eval#4 fit=0.0000 best=0.0000 elapsed=348s
+  RS2 eval#5 fit=0.0000 best=0.0000 elapsed=375s
+  RS2 eval#6 fit=0.0000 best=0.0000 elapsed=430s
+  RS2 eval#7 fit=0.0000 best=0.0000 elapsed=525s
+  RS2 eval#8 fit=0.0020 best=0.0000 elapsed=576s
+  RS2 eval#9 fit=0.0000 best=0.0000 elapsed=696s
+  RS2 eval#10 fit=0.0000 best=0.0000 elapsed=744s
+  RS2 eval#11 fit=0.0000 best=0.0000 elapsed=785s
+  RS2 eval#12 fit=0.0000 best=0.0000 elapsed=861s
+  RS2 eval#13 fit=0.0000 best=0.0000 elapsed=932s
+  RS2 eval#14 fit=0.0000 best=0.0000 elapsed=1034s
+  RS2 eval#15 fit=0.1226 best=0.0000 elapsed=1060s
+  RS2 eval#16 fit=0.0000 best=0.0000 elapsed=1116s
+  RS2 eval#17 fit=0.0000 best=0.0000 elapsed=1181s
+  RS2 eval#18 fit=0.0078 best=0.0000 elapsed=1211s
+  RS2 eval#19 fit=0.0000 best=0.0000 elapsed=1276s
+  RS2 eval#20 fit=0.0000 best=0.0000 elapsed=1370s
+  RS2 eval#21 fit=0.0000 best=0.0000 elapsed=1447s
+  RS2 eval#22 fit=0.0020 best=0.0000 elapsed=1546s
+  RS2 eval#23 fit=0.0447 best=0.0000 elapsed=1607s
+  RS2 eval#24 fit=0.0000 best=0.0000 elapsed=1711s
+  RS2 eval#25 fit=0.0000 best=0.0000 elapsed=1757s
+  RS2 eval#26 fit=0.0000 best=0.0000 elapsed=1815s
+  RS2 eval#27 fit=0.0000 best=0.0000 elapsed=1895s
+  RS2 eval#28 fit=0.0000 best=0.0000 elapsed=1961s
+  RS2 eval#29 fit=0.0000 best=0.0000 elapsed=2030s
+  RS2 eval#30 fit=0.0000 best=0.0000 elapsed=2108s
+  RS2 eval#31 fit=0.0000 best=0.0000 elapsed=2145s
+  RS2 eval#32 fit=0.0000 best=0.0000 elapsed=2239s
+  RS2 eval#33 fit=0.0000 best=0.0000 elapsed=2277s
+  RS2 eval#34 fit=0.0039 best=0.0000 elapsed=2333s
+  RS2 eval#35 fit=0.0000 best=0.0000 elapsed=2395s
+  RS2 eval#36 fit=0.0000 best=0.0000 elapsed=2444s
+  RS2 eval#37 fit=0.0000 best=0.0000 elapsed=2512s
+  RS2 eval#38 fit=0.0059 best=0.0000 elapsed=2580s
+  RS2 eval#39 fit=0.0000 best=0.0000 elapsed=2614s
+  RS2 eval#40 fit=0.0000 best=0.0000 elapsed=2685s
+  RS2 eval#41 fit=0.0000 best=0.0000 elapsed=2731s
+  RS2 eval#42 fit=0.0000 best=0.0000 elapsed=2774s
+  RS2 eval#43 fit=0.0000 best=0.0000 elapsed=2856s
+  RS2 eval#44 fit=0.0000 best=0.0000 elapsed=2916s
+  RS2 eval#45 fit=0.0078 best=0.0000 elapsed=2981s
+  RS2 eval#46 fit=0.0370 best=0.0000 elapsed=3063s
+  RS2 eval#47 fit=0.0000 best=0.0000 elapsed=3106s
+  RS2 eval#48 fit=0.0000 best=0.0000 elapsed=3178s
+  RS2 eval#49 fit=0.0000 best=0.0000 elapsed=3238s
+  RS2 eval#50 fit=0.0000 best=0.0000 elapsed=3363s
+  RS2 eval#51 fit=0.0000 best=0.0000 elapsed=3483s
+RS_SEED_DONE 2 {'lr': 1.020715259496357e-05, 'batch_size': 9.323519055993636, 'dropout': 0.20998774716241525, 'weight_decay': 0.06574330148755926, 'epochs': 2.1245313255608558, 'trainable_layers': 2.9003735798320167} 0.0
+  RS3 eval#1 fit=0.0409 best=0.0409 elapsed=36s
+  RS3 eval#2 fit=0.0000 best=0.0000 elapsed=105s
+  RS3 eval#3 fit=0.0000 best=0.0000 elapsed=172s
+  RS3 eval#4 fit=0.0000 best=0.0000 elapsed=231s
+  RS3 eval#5 fit=0.0000 best=0.0000 elapsed=266s
+  RS3 eval#6 fit=0.0000 best=0.0000 elapsed=306s
+  RS3 eval#7 fit=0.0000 best=0.0000 elapsed=401s
+  RS3 eval#8 fit=0.0000 best=0.0000 elapsed=475s
+  RS3 eval#9 fit=0.0000 best=0.0000 elapsed=532s
+  RS3 eval#10 fit=0.0000 best=0.0000 elapsed=589s
+  RS3 eval#11 fit=0.0020 best=0.0000 elapsed=665s
+  RS3 eval#12 fit=0.0000 best=0.0000 elapsed=750s
+  RS3 eval#13 fit=0.0000 best=0.0000 elapsed=778s
+  RS3 eval#14 fit=0.0000 best=0.0000 elapsed=846s
+  RS3 eval#15 fit=0.0000 best=0.0000 elapsed=891s
+  RS3 eval#16 fit=0.0000 best=0.0000 elapsed=954s
+  RS3 eval#17 fit=0.0000 best=0.0000 elapsed=1026s
+  RS3 eval#18 fit=0.0000 best=0.0000 elapsed=1064s
+  RS3 eval#19 fit=0.0157 best=0.0000 elapsed=1123s
+  RS3 eval#20 fit=0.0000 best=0.0000 elapsed=1202s
+  RS3 eval#21 fit=0.0000 best=0.0000 elapsed=1287s
+  RS3 eval#22 fit=0.0000 best=0.0000 elapsed=1363s
+  RS3 eval#23 fit=0.0000 best=0.0000 elapsed=1422s
+  RS3 eval#24 fit=0.0000 best=0.0000 elapsed=1474s
+  RS3 eval#25 fit=0.0000 best=0.0000 elapsed=1528s
+  RS3 eval#26 fit=0.0000 best=0.0000 elapsed=1598s
+  RS3 eval#27 fit=0.0000 best=0.0000 elapsed=1637s
+  RS3 eval#28 fit=0.1151 best=0.0000 elapsed=1665s
+  RS3 eval#29 fit=0.0000 best=0.0000 elapsed=1720s
+  RS3 eval#30 fit=0.0020 best=0.0000 elapsed=1799s
+  RS3 eval#31 fit=0.0000 best=0.0000 elapsed=1889s
+  RS3 eval#32 fit=0.0543 best=0.0000 elapsed=1958s
+  RS3 eval#33 fit=0.0000 best=0.0000 elapsed=2013s
+  RS3 eval#34 fit=0.0059 best=0.0000 elapsed=2046s
+  RS3 eval#35 fit=0.0000 best=0.0000 elapsed=2111s
+  RS3 eval#36 fit=0.3333 best=0.0000 elapsed=2139s
+  RS3 eval#37 fit=0.0000 best=0.0000 elapsed=2190s
+  RS3 eval#38 fit=0.0020 best=0.0000 elapsed=2279s
+  RS3 eval#39 fit=0.0000 best=0.0000 elapsed=2312s
+  RS3 eval#40 fit=0.0000 best=0.0000 elapsed=2350s
+  RS3 eval#41 fit=0.0000 best=0.0000 elapsed=2420s
+  RS3 eval#42 fit=0.0000 best=0.0000 elapsed=2491s
+  RS3 eval#43 fit=0.0000 best=0.0000 elapsed=2524s
+  RS3 eval#44 fit=0.1611 best=0.0000 elapsed=2581s
+  RS3 eval#45 fit=0.0000 best=0.0000 elapsed=2688s
+  RS3 eval#46 fit=0.0020 best=0.0000 elapsed=2756s
+  RS3 eval#47 fit=0.1837 best=0.0000 elapsed=2797s
+  RS3 eval#48 fit=0.0000 best=0.0000 elapsed=2911s
+  RS3 eval#49 fit=0.0039 best=0.0000 elapsed=2945s
+  RS3 eval#50 fit=0.0000 best=0.0000 elapsed=3022s
+  RS3 eval#51 fit=0.0000 best=0.0000 elapsed=3066s
+RS_SEED_DONE 3 {'lr': 2.447351360890087e-05, 'batch_size': 11.833733951289886, 'dropout': 0.3938308605636859, 'weight_decay': 0.011367201992140342, 'epochs': 1.782456380991324, 'trainable_layers': 5.100441095728182} 0.0
+  RS4 eval#1 fit=0.0020 best=0.0020 elapsed=70s
+  RS4 eval#2 fit=0.0020 best=0.0020 elapsed=183s
+  RS4 eval#3 fit=0.0293 best=0.0020 elapsed=309s
+  RS4 eval#4 fit=0.0020 best=0.0020 elapsed=368s
+  RS4 eval#5 fit=0.0000 best=0.0000 elapsed=425s
+  RS4 eval#6 fit=0.0000 best=0.0000 elapsed=514s
+  RS4 eval#7 fit=0.0000 best=0.0000 elapsed=591s
+  RS4 eval#8 fit=0.0000 best=0.0000 elapsed=635s
+  RS4 eval#9 fit=0.0020 best=0.0000 elapsed=737s
+  RS4 eval#10 fit=0.0000 best=0.0000 elapsed=848s
+  RS4 eval#11 fit=0.0000 best=0.0000 elapsed=935s
+  RS4 eval#12 fit=0.1616 best=0.0000 elapsed=966s
+  RS4 eval#13 fit=0.0000 best=0.0000 elapsed=1007s
+  RS4 eval#14 fit=0.0000 best=0.0000 elapsed=1083s
+  RS4 eval#15 fit=0.0000 best=0.0000 elapsed=1118s
+  RS4 eval#16 fit=0.0000 best=0.0000 elapsed=1194s
+  RS4 eval#17 fit=0.0176 best=0.0000 elapsed=1230s
+  RS4 eval#18 fit=0.0000 best=0.0000 elapsed=1317s
+  RS4 eval#19 fit=0.0000 best=0.0000 elapsed=1453s
+  RS4 eval#20 fit=0.0000 best=0.0000 elapsed=1542s
+  RS4 eval#21 fit=0.0000 best=0.0000 elapsed=1623s
+  RS4 eval#22 fit=0.0000 best=0.0000 elapsed=1757s
+  RS4 eval#23 fit=0.0000 best=0.0000 elapsed=1805s
+  RS4 eval#24 fit=0.0039 best=0.0000 elapsed=1846s
+  RS4 eval#25 fit=0.0000 best=0.0000 elapsed=1927s
+  RS4 eval#26 fit=0.0020 best=0.0000 elapsed=2002s
+  RS4 eval#27 fit=0.0000 best=0.0000 elapsed=2115s
+  RS4 eval#28 fit=0.0000 best=0.0000 elapsed=2187s
+  RS4 eval#29 fit=0.0000 best=0.0000 elapsed=2297s
+  RS4 eval#30 fit=0.0000 best=0.0000 elapsed=2396s
+  RS4 eval#31 fit=0.0059 best=0.0000 elapsed=2503s
+  RS4 eval#32 fit=0.0000 best=0.0000 elapsed=2565s
+  RS4 eval#33 fit=0.0000 best=0.0000 elapsed=2649s
+  RS4 eval#34 fit=0.0000 best=0.0000 elapsed=2737s
+  RS4 eval#35 fit=0.0000 best=0.0000 elapsed=2822s
+  RS4 eval#36 fit=0.0000 best=0.0000 elapsed=2857s
+  RS4 eval#37 fit=0.0000 best=0.0000 elapsed=2942s
+  RS4 eval#38 fit=0.0000 best=0.0000 elapsed=3044s
+  RS4 eval#39 fit=0.0505 best=0.0000 elapsed=3102s
+  RS4 eval#40 fit=0.0000 best=0.0000 elapsed=3175s
+  RS4 eval#41 fit=0.0000 best=0.0000 elapsed=3214s
+  RS4 eval#42 fit=0.1075 best=0.0000 elapsed=3279s
+  RS4 eval#43 fit=0.0000 best=0.0000 elapsed=3344s
+  RS4 eval#44 fit=0.0000 best=0.0000 elapsed=3431s
+  RS4 eval#45 fit=0.0000 best=0.0000 elapsed=3469s
+  RS4 eval#46 fit=0.0039 best=0.0000 elapsed=3542s
+  RS4 eval#47 fit=0.0000 best=0.0000 elapsed=3639s
+  RS4 eval#48 fit=0.0000 best=0.0000 elapsed=3744s
+  RS4 eval#49 fit=0.0000 best=0.0000 elapsed=3817s
+  RS4 eval#50 fit=0.0020 best=0.0000 elapsed=3843s
+  RS4 eval#51 fit=0.0000 best=0.0000 elapsed=3928s
+RS_SEED_DONE 4 {'lr': 2.5395512340483352e-05, 'batch_size': 19.84687601494676, 'dropout': 0.3000904757394983, 'weight_decay': 0.09585822861092473, 'epochs': 1.6998747996445096, 'trainable_layers': 3.342626880669296} 0.0
+  RS5 eval#1 fit=0.0000 best=0.0000 elapsed=30s
+  RS5 eval#2 fit=0.0000 best=0.0000 elapsed=93s
+  RS5 eval#3 fit=0.0176 best=0.0000 elapsed=154s
+  RS5 eval#4 fit=0.0000 best=0.0000 elapsed=230s
+  RS5 eval#5 fit=0.0000 best=0.0000 elapsed=297s
+  RS5 eval#6 fit=0.0000 best=0.0000 elapsed=337s
+  RS5 eval#7 fit=0.0000 best=0.0000 elapsed=414s
+  RS5 eval#8 fit=0.0039 best=0.0000 elapsed=466s
+  RS5 eval#9 fit=0.0000 best=0.0000 elapsed=579s
+  RS5 eval#10 fit=0.0000 best=0.0000 elapsed=647s
+  RS5 eval#11 fit=0.0000 best=0.0000 elapsed=686s
+  RS5 eval#12 fit=0.0000 best=0.0000 elapsed=758s
+  RS5 eval#13 fit=0.0000 best=0.0000 elapsed=852s
+  RS5 eval#14 fit=0.0000 best=0.0000 elapsed=925s
+  RS5 eval#15 fit=0.0000 best=0.0000 elapsed=958s
+  RS5 eval#16 fit=0.0117 best=0.0000 elapsed=1033s
+  RS5 eval#17 fit=0.0000 best=0.0000 elapsed=1145s
+  RS5 eval#18 fit=0.0000 best=0.0000 elapsed=1195s
+  RS5 eval#19 fit=0.0000 best=0.0000 elapsed=1224s
+  RS5 eval#20 fit=0.0157 best=0.0000 elapsed=1287s
+  RS5 eval#21 fit=0.0000 best=0.0000 elapsed=1356s
+  RS5 eval#22 fit=0.0000 best=0.0000 elapsed=1384s
+  RS5 eval#23 fit=0.0000 best=0.0000 elapsed=1461s
+  RS5 eval#24 fit=0.0000 best=0.0000 elapsed=1576s
+  RS5 eval#25 fit=0.0000 best=0.0000 elapsed=1613s
+  RS5 eval#26 fit=0.0000 best=0.0000 elapsed=1658s
+  RS5 eval#27 fit=0.0000 best=0.0000 elapsed=1692s
+  RS5 eval#28 fit=0.0000 best=0.0000 elapsed=1754s
+  RS5 eval#29 fit=0.0000 best=0.0000 elapsed=1797s
+  RS5 eval#30 fit=0.0000 best=0.0000 elapsed=1841s
+  RS5 eval#31 fit=0.2021 best=0.0000 elapsed=1894s
+  RS5 eval#32 fit=0.0000 best=0.0000 elapsed=1959s
+  RS5 eval#33 fit=0.0792 best=0.0000 elapsed=2015s
+  RS5 eval#34 fit=0.0000 best=0.0000 elapsed=2069s
+  RS5 eval#35 fit=0.0000 best=0.0000 elapsed=2162s
+  RS5 eval#36 fit=0.0000 best=0.0000 elapsed=2202s
+  RS5 eval#37 fit=0.0000 best=0.0000 elapsed=2252s
+  RS5 eval#38 fit=0.0000 best=0.0000 elapsed=2336s
+  RS5 eval#39 fit=0.0000 best=0.0000 elapsed=2373s
+  RS5 eval#40 fit=0.0000 best=0.0000 elapsed=2406s
+  RS5 eval#41 fit=0.0000 best=0.0000 elapsed=2440s
+  RS5 eval#42 fit=0.0000 best=0.0000 elapsed=2506s
+  RS5 eval#43 fit=0.0020 best=0.0000 elapsed=2541s
+  RS5 eval#44 fit=0.0000 best=0.0000 elapsed=2572s
+  RS5 eval#45 fit=0.0000 best=0.0000 elapsed=2633s
+  RS5 eval#46 fit=0.0716 best=0.0000 elapsed=2701s
+  RS5 eval#47 fit=0.0000 best=0.0000 elapsed=2788s
+  RS5 eval#48 fit=0.0000 best=0.0000 elapsed=2866s
+  RS5 eval#49 fit=0.0000 best=0.0000 elapsed=2947s
+  RS5 eval#50 fit=0.0078 best=0.0000 elapsed=3007s
+  RS5 eval#51 fit=0.0000 best=0.0000 elapsed=3037s
+RS_SEED_DONE 5 {'lr': 4.044514326352363e-05, 'batch_size': 27.39057895367585, 'dropout': 0.3061302244168568, 'weight_decay': 0.028580138008814163, 'epochs': 1.1078614047633129, 'trainable_layers': 4.300213284713109} 0.0
+[seed 1] bert_rs_s1: rec=0.391 prec=1.000 f1=0.562 auc=0.9999 train=136s
+[seed 2] bert_rs_s1: rec=0.159 prec=0.917 f1=0.272 auc=0.9972 train=136s
+[seed 3] bert_rs_s1: rec=0.536 prec=0.974 f1=0.692 auc=0.9969 train=136s
+[seed 4] bert_rs_s1: rec=0.014 prec=0.500 f1=0.028 auc=0.9963 train=136s
+[seed 5] bert_rs_s1: rec=0.000 prec=0.000 f1=0.000 auc=0.9881 train=138s
+[seed 6] bert_rs_s1: rec=0.246 prec=1.000 f1=0.395 auc=0.9982 train=141s
+[seed 7] bert_rs_s1: rec=0.014 prec=1.000 f1=0.029 auc=0.9975 train=138s
+[seed 8] bert_rs_s1: rec=0.130 prec=0.900 f1=0.228 auc=0.9977 train=136s
+[seed 9] bert_rs_s1: rec=0.406 prec=1.000 f1=0.577 auc=0.9987 train=135s
+[seed 10] bert_rs_s1: rec=0.841 prec=0.983 f1=0.906 auc=0.9978 train=136s
+[seed 1] bert_rs_s2: rec=0.000 prec=0.000 f1=0.000 auc=0.9953 train=132s
+[seed 2] bert_rs_s2: rec=0.029 prec=1.000 f1=0.056 auc=0.9935 train=131s
+[seed 3] bert_rs_s2: rec=0.536 prec=1.000 f1=0.698 auc=0.9970 train=131s
+[seed 4] bert_rs_s2: rec=0.174 prec=1.000 f1=0.296 auc=0.9991 train=131s
+[seed 5] bert_rs_s2: rec=0.928 prec=0.985 f1=0.955 auc=0.9982 train=131s
+[seed 6] bert_rs_s2: rec=0.174 prec=1.000 f1=0.296 auc=0.9983 train=131s
+[seed 7] bert_rs_s2: rec=0.000 prec=0.000 f1=0.000 auc=0.9938 train=131s
+[seed 8] bert_rs_s2: rec=0.000 prec=0.000 f1=0.000 auc=0.9969 train=131s
+[seed 9] bert_rs_s2: rec=0.000 prec=0.000 f1=0.000 auc=0.9961 train=131s
+[seed 10] bert_rs_s2: rec=0.000 prec=0.000 f1=0.000 auc=0.9955 train=131s
+[seed 1] bert_rs_s3: rec=0.913 prec=1.000 f1=0.955 auc=1.0000 train=153s
+[seed 2] bert_rs_s3: rec=1.000 prec=0.958 f1=0.979 auc=0.9963 train=156s
+[seed 3] bert_rs_s3: rec=1.000 prec=0.972 f1=0.986 auc=0.9995 train=155s
+[seed 4] bert_rs_s3: rec=0.913 prec=0.984 f1=0.947 auc=0.9995 train=155s
+[seed 5] bert_rs_s3: rec=0.971 prec=0.971 f1=0.971 auc=0.9976 train=171s
+[seed 6] bert_rs_s3: rec=0.942 prec=0.985 f1=0.963 auc=0.9998 train=161s
+[seed 7] bert_rs_s3: rec=0.913 prec=0.984 f1=0.947 auc=0.9995 train=177s
+[seed 8] bert_rs_s3: rec=0.014 prec=0.500 f1=0.028 auc=0.9851 train=161s
+[seed 9] bert_rs_s3: rec=0.971 prec=1.000 f1=0.985 auc=0.9999 train=182s
+[seed 10] bert_rs_s3: rec=1.000 prec=0.972 f1=0.986 auc=0.9996 train=181s
+[seed 1] bert_rs_s4: rec=0.246 prec=1.000 f1=0.395 auc=0.9959 train=126s
+[seed 2] bert_rs_s4: rec=0.696 prec=1.000 f1=0.821 auc=0.9994 train=136s
+[seed 3] bert_rs_s4: rec=0.942 prec=1.000 f1=0.970 auc=0.9999 train=125s
+[seed 4] bert_rs_s4: rec=0.580 prec=0.976 f1=0.727 auc=0.9965 train=123s
+[seed 5] bert_rs_s4: rec=0.855 prec=1.000 f1=0.922 auc=0.9990 train=118s
+[seed 6] bert_rs_s4: rec=0.681 prec=1.000 f1=0.810 auc=0.9999 train=535s
+[seed 7] bert_rs_s4: rec=0.072 prec=1.000 f1=0.135 auc=0.9964 train=115s
+[seed 8] bert_rs_s4: rec=0.000 prec=0.000 f1=0.000 auc=0.9952 train=124s
+[seed 9] bert_rs_s4: rec=0.000 prec=0.000 f1=0.000 auc=0.9961 train=123s
+[seed 10] bert_rs_s4: rec=0.203 prec=0.933 f1=0.333 auc=0.9965 train=125s
+[seed 1] bert_rs_s5: rec=0.275 prec=1.000 f1=0.432 auc=0.9984 train=68s
+[seed 2] bert_rs_s5: rec=0.739 prec=0.981 f1=0.843 auc=0.9970 train=70s
+[seed 3] bert_rs_s5: rec=0.406 prec=1.000 f1=0.577 auc=0.9985 train=72s
+[seed 4] bert_rs_s5: rec=0.986 prec=1.000 f1=0.993 auc=1.0000 train=74s
+[seed 5] bert_rs_s5: rec=0.710 prec=1.000 f1=0.831 auc=0.9987 train=74s
+[seed 6] bert_rs_s5: rec=0.696 prec=1.000 f1=0.821 auc=0.9985 train=73s
+[seed 7] bert_rs_s5: rec=0.942 prec=1.000 f1=0.970 auc=1.0000 train=70s
+[seed 8] bert_rs_s5: rec=0.391 prec=0.964 f1=0.557 auc=0.9976 train=70s
+[seed 9] bert_rs_s5: rec=0.536 prec=1.000 f1=0.698 auc=0.9999 train=69s
+[seed 10] bert_rs_s5: rec=0.638 prec=0.978 f1=0.772 auc=0.9973 train=68s
+RS_SEEDS_ALL_DONE

@@ -1,0 +1,36 @@
+{
+  "meta_cols": [
+    "content_len_z",
+    "content_word_count_z",
+    "digit_ratio_z",
+    "url_len_z",
+    "url_path_depth_z",
+    "hour_z",
+    "dow_z",
+    "tld_com",
+    "tld_gov",
+    "tld_net",
+    "tld_org",
+    "tld_other"
+  ],
+  "tld_categories": [
+    "com",
+    "gov",
+    "net",
+    "org",
+    "other"
+  ],
+  "selected_seed": 3,
+  "sizes": {
+    "train": 4468,
+    "val": 1046,
+    "test": 979
+  },
+  "positive_rates": {
+    "train": 0.5870635631154879,
+    "val": 0.5965583173996176,
+    "test": 0.6261491317671093
+  },
+  "mixed_label_users": 0,
+  "note": "grouped by `user`; no user spans more than one split. host/user identity intentionally excluded from metadata to avoid re-encoding the same leakage."
+}

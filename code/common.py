@@ -44,6 +44,7 @@ class HttpTextDataset(Dataset):
 def build_model(dropout, trainable_layers):
     model = BertForSequenceClassification.from_pretrained(
         MODEL_NAME, num_labels=2, hidden_dropout_prob=dropout, attention_probs_dropout_prob=dropout,
+        attn_implementation="eager",  # SDPA on MPS (torch>=2.13) rejects attention dropout; eager is numerically the same attention
     )
     # freeze all encoder layers except the last `trainable_layers`
     total_layers = len(model.bert.encoder.layer)

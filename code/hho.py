@@ -30,19 +30,33 @@ def hp_from_vector(z):
     return dict(zip(KEYS, x.tolist()))
 
 
-def hho_optimize(fitness_fn, n_hawks=6, n_iter=4, seed=42, log=None):
+def hho_optimize(fitness_fn, n_hawks=6, n_iter=4, seed=42, log=None, bounds=None):
     """fitness_fn(hp_dict) -> scalar fitness to MINIMIZE (1 - weighted score).
-    Returns best_hp, best_fitness, history (per-iteration best fitness)."""
+    Returns best_hp, best_fitness, history (per-iteration best fitness).
+    `bounds`: optional dict overriding the default BOUNDS (e.g. a reduced search space for
+    searching only a subset of hyperparameters while others are held fixed by the caller)."""
+    if bounds is None:
+        keys, lb, ub, to_hp = KEYS, LB, UB, hp_from_vector
+    else:
+        keys = list(bounds.keys())
+        lb = np.array([bounds[k][0] for k in keys])
+        ub = np.array([bounds[k][1] for k in keys])
+
+        def to_hp(z):
+            z = np.clip(z, 0, 1)
+            x = lb + z * (ub - lb)
+            return dict(zip(keys, x.tolist()))
+
     rng = np.random.default_rng(seed)
-    dim = len(KEYS)
+    dim = len(keys)
     X = rng.uniform(0, 1, size=(n_hawks, dim))
-    fitness = np.array([fitness_fn(hp_from_vector(X[i])) for i in range(n_hawks)])
+    fitness = np.array([fitness_fn(to_hp(X[i])) for i in range(n_hawks)])
     best_idx = int(np.argmin(fitness))
     rabbit = X[best_idx].copy()
     rabbit_fit = fitness[best_idx]
     history = [rabbit_fit]
     if log:
-        log(f"init best fitness={rabbit_fit:.4f} hp={hp_from_vector(rabbit)}")
+        log(f"init best fitness={rabbit_fit:.4f} hp={to_hp(rabbit)}")
 
     for t in range(n_iter):
         E0 = 2 * rng.uniform(0, 1, n_hawks) - 1
@@ -68,7 +82,7 @@ def hho_optimize(fitness_fn, n_hawks=6, n_iter=4, seed=42, log=None):
                     Xi_new = delta - E[i] * np.abs(J * rabbit - Xi)
                 else:
                     Xi_new = rabbit - E[i] * np.abs(delta)
-                cand_fit = fitness_fn(hp_from_vector(Xi_new))
+                cand_fit = fitness_fn(to_hp(Xi_new))
                 if cand_fit >= fitness[i]:
                     lf = levy_flight(dim)
                     if abs(E[i]) >= 0.5:
@@ -79,7 +93,7 @@ def hho_optimize(fitness_fn, n_hawks=6, n_iter=4, seed=42, log=None):
                 Xi = Xi_new
 
             Xi = np.clip(Xi, 0, 1)
-            new_fit = fitness_fn(hp_from_vector(Xi))
+            new_fit = fitness_fn(to_hp(Xi))
             X[i] = Xi
             fitness[i] = new_fit
 
@@ -89,6 +103,6 @@ def hho_optimize(fitness_fn, n_hawks=6, n_iter=4, seed=42, log=None):
             rabbit_fit = fitness[best_idx]
         history.append(rabbit_fit)
         if log:
-            log(f"iter {t+1}/{n_iter} best fitness={rabbit_fit:.4f} hp={hp_from_vector(rabbit)}")
+            log(f"iter {t+1}/{n_iter} best fitness={rabbit_fit:.4f} hp={to_hp(rabbit)}")
 
-    return hp_from_vector(rabbit), rabbit_fit, history
+    return to_hp(rabbit), rabbit_fit, history

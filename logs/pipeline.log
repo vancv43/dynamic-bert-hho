@@ -1,0 +1,634 @@
+[pipeline] using pre-downloaded ../archive.zip (Kaggle mirror, streamed via unzip -p)
+[pipeline] STAGE extract_http_sample
+malicious ids to exclude: 3860 malicious users: 70
+header: ['id', 'date', 'user', 'pc', 'url', 'activity', 'content']
+  scanned 2000000 rows, sampled pool size 20000
+  scanned 4000000 rows, sampled pool size 20000
+  scanned 6000000 rows, sampled pool size 20000
+  scanned 8000000 rows, sampled pool size 20000
+  scanned 10000000 rows, sampled pool size 20000
+  scanned 12000000 rows, sampled pool size 20000
+  scanned 14000000 rows, sampled pool size 20000
+  scanned 16000000 rows, sampled pool size 20000
+  scanned 18000000 rows, sampled pool size 20000
+  scanned 20000000 rows, sampled pool size 20000
+  scanned 22000000 rows, sampled pool size 20000
+  scanned 24000000 rows, sampled pool size 20000
+  scanned 26000000 rows, sampled pool size 20000
+  scanned 28000000 rows, sampled pool size 20000
+  scanned 30000000 rows, sampled pool size 20000
+  scanned 32000000 rows, sampled pool size 20000
+  scanned 34000000 rows, sampled pool size 20000
+  scanned 36000000 rows, sampled pool size 20000
+  scanned 38000000 rows, sampled pool size 20000
+  scanned 40000000 rows, sampled pool size 20000
+  scanned 42000000 rows, sampled pool size 20000
+  scanned 44000000 rows, sampled pool size 20000
+  scanned 46000000 rows, sampled pool size 20000
+  scanned 48000000 rows, sampled pool size 20000
+  scanned 50000000 rows, sampled pool size 20000
+  scanned 52000000 rows, sampled pool size 20000
+  scanned 54000000 rows, sampled pool size 20000
+  scanned 56000000 rows, sampled pool size 20000
+  scanned 58000000 rows, sampled pool size 20000
+  scanned 60000000 rows, sampled pool size 20000
+  scanned 62000000 rows, sampled pool size 20000
+  scanned 64000000 rows, sampled pool size 20000
+  scanned 66000000 rows, sampled pool size 20000
+  scanned 68000000 rows, sampled pool size 20000
+  scanned 70000000 rows, sampled pool size 20000
+  scanned 72000000 rows, sampled pool size 20000
+  scanned 74000000 rows, sampled pool size 20000
+  scanned 76000000 rows, sampled pool size 20000
+  scanned 78000000 rows, sampled pool size 20000
+  scanned 80000000 rows, sampled pool size 20000
+  scanned 82000000 rows, sampled pool size 20000
+  scanned 84000000 rows, sampled pool size 20000
+  scanned 86000000 rows, sampled pool size 20000
+  scanned 88000000 rows, sampled pool size 20000
+  scanned 90000000 rows, sampled pool size 20000
+  scanned 92000000 rows, sampled pool size 20000
+  scanned 94000000 rows, sampled pool size 20000
+  scanned 96000000 rows, sampled pool size 20000
+  scanned 98000000 rows, sampled pool size 20000
+  scanned 100000000 rows, sampled pool size 20000
+  scanned 102000000 rows, sampled pool size 20000
+  scanned 104000000 rows, sampled pool size 20000
+  scanned 106000000 rows, sampled pool size 20000
+  scanned 108000000 rows, sampled pool size 20000
+  scanned 110000000 rows, sampled pool size 20000
+  scanned 112000000 rows, sampled pool size 20000
+  scanned 114000000 rows, sampled pool size 20000
+  scanned 116000000 rows, sampled pool size 20000
+total http rows scanned: 117025216
+non-malicious rows seen: 117025216
+sampled benign rows: 20000
+saved benign_http_sample.jsonl
+[pipeline] STAGE build_dataset
+malicious: 3860 benign: 20000
+final dataset size: 6493 positive rate: 0.5944863699368551
+train: 4545 val: 974 test: 974
+train pos rate: 0.5944994499449945 val: 0.5944558521560575 test: 0.5944558521560575
+[pipeline] STAGE baselines
+running TF-IDF + XGBoost...
+TF-IDF+XGBoost: {'accuracy': 1.0, 'precision': np.float64(1.0), 'recall': np.float64(1.0), 'f1': np.float64(1.0), 'roc_auc': np.float64(1.0), 'kappa': np.float64(1.0)}
+running Word2Vec + XGBoost...
+Word2Vec+XGBoost: {'accuracy': 1.0, 'precision': np.float64(1.0), 'recall': np.float64(1.0), 'f1': np.float64(1.0), 'roc_auc': np.float64(1.0), 'kappa': np.float64(1.0)}
+saved baseline results
+[pipeline] STAGE hho_search
+  eval#1 hp={'lr': 4e-05, 'batch_size': 18.53308, 'dropout': 0.44344, 'weight_decay': 0.06974, 'epochs': 1.18835, 'trainable_layers': 7.85373} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=54s
+  eval#2 hp={'lr': 4e-05, 'batch_size': 26.86554, 'dropout': 0.15125, 'weight_decay': 0.04504, 'epochs': 1.7416, 'trainable_layers': 7.56059} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=141s
+  eval#3 hp={'lr': 3e-05, 'batch_size': 27.74628, 'dropout': 0.27737, 'weight_decay': 0.02272, 'epochs': 2.10917, 'trainable_layers': 2.3829} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=199s
+  eval#4 hp={'lr': 4e-05, 'batch_size': 23.15995, 'dropout': 0.40324, 'weight_decay': 0.03545, 'epochs': 2.9414, 'trainable_layers': 7.35873} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=312s
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: ed5a8539-c5be-4d5c-ba92-6ee0a7db7aa1)')' thrown while requesting HEAD https://huggingface.co/bert-base-uncased/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+  eval#5 hp={'lr': 4e-05, 'batch_size': 12.67133, 'dropout': 0.28669, 'weight_decay': 0.00438, 'epochs': 1.30858, 'trainable_layers': 6.09829} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=375s
+  eval#6 hp={'lr': 4e-05, 'batch_size': 31.22023, 'dropout': 0.23033, 'weight_decay': 0.03705, 'epochs': 1.93911, 'trainable_layers': 3.13683} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=436s
+[HHO] init best fitness=0.0000 hp={'lr': 3.8923846379242205e-05, 'batch_size': 18.533082554049255, 'dropout': 0.44343916796455296, 'weight_decay': 0.0697368029059364, 'epochs': 1.188354695775299, 'trainable_layers': 7.853734109820536}
+  eval#7 hp={'lr': 2e-05, 'batch_size': 13.18979, 'dropout': 0.26922, 'weight_decay': 0.03436, 'epochs': 1.0928, 'trainable_layers': 4.88422} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=475s
+  eval#8 hp={'lr': 4e-05, 'batch_size': 19.34283, 'dropout': 0.47183, 'weight_decay': 0.07214, 'epochs': 1.24212, 'trainable_layers': 7.88222} acc=0.9967 f1=0.9972 kappa=0.9931 fit=0.0038 elapsed=519s
+Traceback (most recent call last):
+  File "code/05_run_hho_search.py", line 68, in <module>
+    main()
+  File "code/05_run_hho_search.py", line 51, in main
+    best_hp, best_fit, history = hho_optimize(fitness_fn, n_hawks=6, n_iter=4, seed=42, log=log)
+  File "code/hho.py", line 72, in hho_optimize
+    lf = levy_flight(dim)
+  File "code/hho.py", line 19, in levy_flight
+    sigma = (np.math.gamma(1 + beta) * np.sin(np.pi * beta / 2) /
+  File "<site-packages>/numpy/__init__.py", line 414, in __getattr__
+    raise AttributeError("module {!r} has no attribute "
+AttributeError: module 'numpy' has no attribute 'math'. Did you mean: 'emath'?
+[pipeline] RESUMING from hho_search (dataset/baselines already done)
+[pipeline] STAGE hho_search
+  eval#1 hp={'lr': 4e-05, 'batch_size': 18.53308, 'dropout': 0.44344, 'weight_decay': 0.06974, 'epochs': 1.18835, 'trainable_layers': 7.85373} acc=0.9983 f1=0.9986 kappa=0.9965 fit=0.0019 elapsed=46s
+  eval#2 hp={'lr': 4e-05, 'batch_size': 26.86554, 'dropout': 0.15125, 'weight_decay': 0.04504, 'epochs': 1.7416, 'trainable_layers': 7.56059} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=133s
+  eval#3 hp={'lr': 3e-05, 'batch_size': 27.74628, 'dropout': 0.27737, 'weight_decay': 0.02272, 'epochs': 2.10917, 'trainable_layers': 2.3829} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=187s
+  eval#4 hp={'lr': 4e-05, 'batch_size': 23.15995, 'dropout': 0.40324, 'weight_decay': 0.03545, 'epochs': 2.9414, 'trainable_layers': 7.35873} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=329s
+  eval#5 hp={'lr': 4e-05, 'batch_size': 12.67133, 'dropout': 0.28669, 'weight_decay': 0.00438, 'epochs': 1.30858, 'trainable_layers': 6.09829} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=371s
+  eval#6 hp={'lr': 4e-05, 'batch_size': 31.22023, 'dropout': 0.23033, 'weight_decay': 0.03705, 'epochs': 1.93911, 'trainable_layers': 3.13683} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=428s
+[HHO] init best fitness=0.0000 hp={'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611}
+  eval#7 hp={'lr': 2e-05, 'batch_size': 13.18979, 'dropout': 0.26922, 'weight_decay': 0.03436, 'epochs': 1.0928, 'trainable_layers': 4.88422} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=466s
+  eval#8 hp={'lr': 4e-05, 'batch_size': 26.86554, 'dropout': 0.15125, 'weight_decay': 0.04504, 'epochs': 1.7416, 'trainable_layers': 7.56059} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=547s
+  eval#9 hp={'lr': 5e-05, 'batch_size': 15.56899, 'dropout': 0.21027, 'weight_decay': 0.04779, 'epochs': 1.51331, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=631s
+  eval#10 hp={'lr': 3e-05, 'batch_size': 8.0, 'dropout': 0.16926, 'weight_decay': 0.02676, 'epochs': 1.11926, 'trainable_layers': 3.59001} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=670s
+  eval#11 hp={'lr': 0.0, 'batch_size': 8.0, 'dropout': 0.1, 'weight_decay': 0.0, 'epochs': 1.0, 'trainable_layers': 2.0} acc=0.9717 f1=0.9764 kappa=0.9410 fit=0.0326 elapsed=703s
+  eval#12 hp={'lr': 2e-05, 'batch_size': 8.0, 'dropout': 0.1, 'weight_decay': 0.05263, 'epochs': 1.17526, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=754s
+  eval#13 hp={'lr': 4e-05, 'batch_size': 30.43386, 'dropout': 0.18529, 'weight_decay': 0.05526, 'epochs': 1.85045, 'trainable_layers': 7.9282} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=832s
+  eval#14 hp={'lr': 3e-05, 'batch_size': 29.54336, 'dropout': 0.1, 'weight_decay': 0.02306, 'epochs': 1.9201, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=907s
+  eval#15 hp={'lr': 1e-05, 'batch_size': 16.88475, 'dropout': 0.1, 'weight_decay': 0.00646, 'epochs': 1.24881, 'trainable_layers': 3.52698} acc=0.9983 f1=0.9986 kappa=0.9965 fit=0.0019 elapsed=942s
+[HHO] iter 1/4 best fitness=0.0000 hp={'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611}
+  eval#16 hp={'lr': 5e-05, 'batch_size': 32.0, 'dropout': 0.1, 'weight_decay': 0.03587, 'epochs': 2.35639, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1020s
+  eval#17 hp={'lr': 5e-05, 'batch_size': 32.0, 'dropout': 0.1768, 'weight_decay': 0.06375, 'epochs': 2.63591, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1132s
+  eval#18 hp={'lr': 3e-05, 'batch_size': 21.37825, 'dropout': 0.12258, 'weight_decay': 0.0437, 'epochs': 1.63071, 'trainable_layers': 7.34715} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1205s
+  eval#19 hp={'lr': 5e-05, 'batch_size': 24.03309, 'dropout': 0.26651, 'weight_decay': 0.1, 'epochs': 1.96702, 'trainable_layers': 6.16334} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1275s
+  eval#20 hp={'lr': 4e-05, 'batch_size': 23.63772, 'dropout': 0.14816, 'weight_decay': 0.04191, 'epochs': 1.63512, 'trainable_layers': 6.88124} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1350s
+  eval#21 hp={'lr': 3e-05, 'batch_size': 31.99225, 'dropout': 0.1, 'weight_decay': 0.04348, 'epochs': 1.0, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1394s
+  eval#22 hp={'lr': 0.0, 'batch_size': 8.0, 'dropout': 0.1, 'weight_decay': 0.0, 'epochs': 1.0, 'trainable_layers': 2.0} acc=0.9550 f1=0.9630 kappa=0.9057 fit=0.0517 elapsed=1430s
+  eval#23 hp={'lr': 2e-05, 'batch_size': 28.6767, 'dropout': 0.1, 'weight_decay': 0.05082, 'epochs': 3.0, 'trainable_layers': 2.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1502s
+  eval#24 hp={'lr': 4e-05, 'batch_size': 25.54554, 'dropout': 0.12598, 'weight_decay': 0.0342, 'epochs': 1.6536, 'trainable_layers': 7.34399} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1576s
+  eval#25 hp={'lr': 3e-05, 'batch_size': 27.9476, 'dropout': 0.13422, 'weight_decay': 0.01898, 'epochs': 1.02685, 'trainable_layers': 5.60555} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1615s
+  eval#26 hp={'lr': 5e-05, 'batch_size': 29.66854, 'dropout': 0.16564, 'weight_decay': 0.05587, 'epochs': 1.87999, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1696s
+  eval#27 hp={'lr': 5e-05, 'batch_size': 29.66854, 'dropout': 0.16564, 'weight_decay': 0.05587, 'epochs': 1.87999, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1776s
+[HHO] iter 2/4 best fitness=0.0000 hp={'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611}
+  eval#28 hp={'lr': 3e-05, 'batch_size': 22.27791, 'dropout': 0.13782, 'weight_decay': 0.03355, 'epochs': 1.50362, 'trainable_layers': 6.29778} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1847s
+  eval#29 hp={'lr': 5e-05, 'batch_size': 32.0, 'dropout': 0.24862, 'weight_decay': 0.1, 'epochs': 2.06432, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=1926s
+  eval#30 hp={'lr': 4e-05, 'batch_size': 26.89958, 'dropout': 0.15263, 'weight_decay': 0.0457, 'epochs': 1.74431, 'trainable_layers': 7.57738} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=2009s
+  eval#31 hp={'lr': 2e-05, 'batch_size': 25.78987, 'dropout': 0.1, 'weight_decay': 0.01255, 'epochs': 2.68005, 'trainable_layers': 7.93952} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=2131s
+  eval#32 hp={'lr': 4e-05, 'batch_size': 28.61005, 'dropout': 0.16868, 'weight_decay': 0.04557, 'epochs': 1.99394, 'trainable_layers': 7.71011} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=2213s
+  eval#33 hp={'lr': 5e-05, 'batch_size': 27.83638, 'dropout': 0.12891, 'weight_decay': 0.0, 'epochs': 1.69989, 'trainable_layers': 6.07362} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=2281s
+  eval#34 hp={'lr': 3e-05, 'batch_size': 12.09682, 'dropout': 0.17513, 'weight_decay': 0.00936, 'epochs': 1.0, 'trainable_layers': 8.0} acc=0.9983 f1=0.9986 kappa=0.9966 fit=0.0019 elapsed=2332s
+  eval#35 hp={'lr': 3e-05, 'batch_size': 32.0, 'dropout': 0.1, 'weight_decay': 0.0, 'epochs': 2.85215, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=2450s
+  eval#36 hp={'lr': 5e-05, 'batch_size': 19.90401, 'dropout': 0.16814, 'weight_decay': 0.07978, 'epochs': 2.82589, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=2571s
+  eval#37 hp={'lr': 5e-05, 'batch_size': 32.0, 'dropout': 0.1, 'weight_decay': 0.1, 'epochs': 3.0, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=2685s
+  eval#38 hp={'lr': 4e-05, 'batch_size': 26.37421, 'dropout': 0.14872, 'weight_decay': 0.04314, 'epochs': 1.71734, 'trainable_layers': 7.48357} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=2759s
+  eval#39 hp={'lr': 4e-05, 'batch_size': 32.0, 'dropout': 0.1, 'weight_decay': 0.04182, 'epochs': 1.32329, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=2802s
+[HHO] iter 3/4 best fitness=0.0000 hp={'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611}
+  eval#40 hp={'lr': 3e-05, 'batch_size': 24.85449, 'dropout': 0.11311, 'weight_decay': 0.02351, 'epochs': 1.61519, 'trainable_layers': 7.38848} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=2881s
+  eval#41 hp={'lr': 4e-05, 'batch_size': 22.50401, 'dropout': 0.5, 'weight_decay': 0.04625, 'epochs': 1.52391, 'trainable_layers': 4.40515} acc=0.9733 f1=0.9780 kappa=0.9442 fit=0.0306 elapsed=2947s
+  eval#42 hp={'lr': 3e-05, 'batch_size': 26.59812, 'dropout': 0.13851, 'weight_decay': 0.03696, 'epochs': 1.50829, 'trainable_layers': 7.46638} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=3026s
+  eval#43 hp={'lr': 4e-05, 'batch_size': 29.64223, 'dropout': 0.48124, 'weight_decay': 0.07921, 'epochs': 2.4631, 'trainable_layers': 8.0} acc=0.9933 f1=0.9944 kappa=0.9862 fit=0.0077 elapsed=3109s
+  eval#44 hp={'lr': 3e-05, 'batch_size': 26.48615, 'dropout': 0.14252, 'weight_decay': 0.02744, 'epochs': 1.7253, 'trainable_layers': 6.97949} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=3188s
+  eval#45 hp={'lr': 3e-05, 'batch_size': 21.84556, 'dropout': 0.10166, 'weight_decay': 0.0261, 'epochs': 1.88347, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=3274s
+  eval#46 hp={'lr': 3e-05, 'batch_size': 24.84541, 'dropout': 0.13108, 'weight_decay': 0.02732, 'epochs': 1.30465, 'trainable_layers': 7.38771} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=3315s
+  eval#47 hp={'lr': 5e-05, 'batch_size': 8.0, 'dropout': 0.24154, 'weight_decay': 0.0, 'epochs': 3.0, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=3467s
+  eval#48 hp={'lr': 4e-05, 'batch_size': 26.76872, 'dropout': 0.15028, 'weight_decay': 0.044, 'epochs': 1.71786, 'trainable_layers': 7.5523} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=3551s
+  eval#49 hp={'lr': 0.0, 'batch_size': 32.0, 'dropout': 0.1, 'weight_decay': 0.02195, 'epochs': 2.93283, 'trainable_layers': 8.0} acc=0.9967 f1=0.9972 kappa=0.9931 fit=0.0038 elapsed=3671s
+  eval#50 hp={'lr': 4e-05, 'batch_size': 27.81065, 'dropout': 0.16068, 'weight_decay': 0.04563, 'epochs': 1.81859, 'trainable_layers': 7.64147} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=3749s
+  eval#51 hp={'lr': 4e-05, 'batch_size': 32.0, 'dropout': 0.16543, 'weight_decay': 0.05547, 'epochs': 1.97888, 'trainable_layers': 8.0} acc=1.0000 f1=1.0000 kappa=1.0000 fit=0.0000 elapsed=3826s
+[HHO] iter 4/4 best fitness=0.0000 hp={'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611}
+HHO search done: {'best_hp': {'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611}, 'best_fitness': np.float64(0.0), 'history': [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)], 'n_evaluations': 51, 'search_train_size': 2000, 'search_val_size': 600, 'elapsed_seconds': 3825.8480610847473}
+[pipeline] STAGE final_models
+training BERT (no HPO, fixed BERT-base defaults, 1 epoch, all layers)...
+  epoch 1/1 loss=0.0246
+BERT (no HPO): {'accuracy': 1.0, 'precision': np.float64(1.0), 'recall': np.float64(1.0), 'f1': np.float64(1.0), 'roc_auc': np.float64(1.0), 'kappa': np.float64(1.0)} (125s)
+training BERT + Manual Tuning...
+  epoch 1/2 loss=0.0351
+  epoch 2/2 loss=0.0005
+BERT + Manual Tuning: {'accuracy': 1.0, 'precision': np.float64(1.0), 'recall': np.float64(1.0), 'f1': np.float64(1.0), 'roc_auc': np.float64(1.0), 'kappa': np.float64(1.0)} (134s)
+training Dynamic BERT-HHO (best HHO config) on full train set...
+  epoch 1/2 loss=0.0282
+  epoch 2/2 loss=0.0003
+Dynamic BERT-HHO: {'accuracy': 0.9989733059548255, 'precision': np.float64(0.9982758620689656), 'recall': np.float64(1.0), 'f1': np.float64(0.999137187230371), 'roc_auc': np.float64(1.0), 'kappa': np.float64(0.9978697624369568)} (173s)
+all final models trained and saved.
+[pipeline] STAGE shap
+
+  0%|          | 0/498 [00:00<?, ?it/s]
+ 57%|█████▋    | 284/498 [00:00<00:00, 2069.26it/s]
+ 99%|█████████▉| 494/498 [00:03<00:00, 103.61it/s] 
+                                                  
+
+PartitionExplainer explainer:   2%|▎         | 1/40 [00:00<?, ?it/s]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 55%|█████▍    | 272/498 [00:00<00:00, 2608.66it/s][A
+
+                                                   [A
+PartitionExplainer explainer:   8%|▊         | 3/40 [00:22<03:01,  4.89s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 55%|█████▍    | 272/498 [00:00<00:00, 2547.35it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  10%|█         | 4/40 [00:32<04:04,  6.80s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 53%|█████▎    | 266/498 [00:00<00:00, 2292.78it/s][A
+
+500it [00:04, 97.11it/s]                           [A
+
+                        [A
+PartitionExplainer explainer:  12%|█▎        | 5/40 [00:41<04:35,  7.87s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 58%|█████▊    | 290/498 [00:00<00:00, 2869.44it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  15%|█▌        | 6/40 [00:51<04:43,  8.33s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 56%|█████▌    | 278/498 [00:00<00:00, 2544.88it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  18%|█▊        | 7/40 [01:00<04:47,  8.71s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 58%|█████▊    | 290/498 [00:00<00:00, 2671.68it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  20%|██        | 8/40 [01:10<04:47,  8.97s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 55%|█████▍    | 272/498 [00:00<00:00, 2297.47it/s][A
+
+504it [00:04, 85.76it/s]                           [A
+
+                        [A
+PartitionExplainer explainer:  22%|██▎       | 9/40 [01:20<04:48,  9.32s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 53%|█████▎    | 266/498 [00:00<00:00, 2240.70it/s][A
+
+ 99%|█████████▉| 494/498 [00:04<00:00, 96.19it/s]  [A
+
+                                                 [A
+PartitionExplainer explainer:  25%|██▌       | 10/40 [01:29<04:43,  9.44s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 57%|█████▋    | 284/498 [00:00<00:00, 1191.98it/s][A
+
+ 81%|████████  | 404/498 [00:02<00:00, 132.42it/s] [A
+
+ 92%|█████████▏| 458/498 [00:03<00:00, 103.57it/s][A
+
+ 99%|█████████▉| 494/498 [00:04<00:00, 90.41it/s] [A
+
+                                                 [A
+PartitionExplainer explainer:  28%|██▊       | 11/40 [01:39<04:33,  9.44s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 57%|█████▋    | 284/498 [00:00<00:00, 2705.28it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  30%|███       | 12/40 [01:48<04:22,  9.39s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 59%|█████▉    | 296/498 [00:00<00:00, 2417.14it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  32%|███▎      | 13/40 [01:57<04:10,  9.29s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 55%|█████▍    | 272/498 [00:00<00:00, 2362.03it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  35%|███▌      | 14/40 [02:07<04:05,  9.45s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 56%|█████▌    | 278/498 [00:00<00:00, 2533.91it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  38%|███▊      | 15/40 [02:16<03:55,  9.43s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 56%|█████▌    | 278/498 [00:00<00:00, 2714.90it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  40%|████      | 16/40 [02:26<03:45,  9.38s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 58%|█████▊    | 290/498 [00:00<00:00, 2726.90it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  42%|████▎     | 17/40 [02:35<03:34,  9.35s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 55%|█████▍    | 272/498 [00:00<00:00, 2531.34it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  45%|████▌     | 18/40 [02:44<03:26,  9.38s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 58%|█████▊    | 290/498 [00:00<00:00, 2587.37it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  48%|████▊     | 19/40 [02:53<03:15,  9.30s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 57%|█████▋    | 284/498 [00:00<00:00, 2649.16it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  50%|█████     | 20/40 [03:03<03:05,  9.28s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 58%|█████▊    | 290/498 [00:00<00:00, 2685.88it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  52%|█████▎    | 21/40 [03:12<02:55,  9.23s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 56%|█████▌    | 278/498 [00:00<00:00, 2375.35it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  55%|█████▌    | 22/40 [03:21<02:47,  9.32s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 57%|█████▋    | 284/498 [00:00<00:00, 2555.87it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  57%|█████▊    | 23/40 [03:31<02:38,  9.30s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 52%|█████▏    | 260/498 [00:00<00:00, 2161.46it/s][A
+
+ 97%|█████████▋| 482/498 [00:04<00:00, 96.22it/s]  [A
+
+                                                 [A
+PartitionExplainer explainer:  60%|██████    | 24/40 [03:40<02:30,  9.42s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 57%|█████▋    | 284/498 [00:00<00:00, 2460.52it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  62%|██████▎   | 25/40 [03:50<02:20,  9.39s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 57%|█████▋    | 284/498 [00:00<00:00, 2609.67it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  65%|██████▌   | 26/40 [03:59<02:11,  9.36s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 56%|█████▌    | 278/498 [00:00<00:00, 2550.20it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  68%|██████▊   | 27/40 [04:08<02:02,  9.39s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 56%|█████▌    | 278/498 [00:00<00:00, 2493.11it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  70%|███████   | 28/40 [04:18<01:52,  9.38s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 56%|█████▌    | 278/498 [00:00<00:00, 2379.77it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  72%|███████▎  | 29/40 [04:27<01:43,  9.42s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 57%|█████▋    | 284/498 [00:00<00:00, 2623.36it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  75%|███████▌  | 30/40 [04:37<01:34,  9.46s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 56%|█████▌    | 278/498 [00:00<00:00, 2339.06it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  78%|███████▊  | 31/40 [04:46<01:25,  9.51s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 57%|█████▋    | 284/498 [00:00<00:00, 2639.70it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  80%|████████  | 32/40 [04:56<01:15,  9.46s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 58%|█████▊    | 290/498 [00:00<00:00, 2826.18it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  82%|████████▎ | 33/40 [05:05<01:06,  9.43s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 57%|█████▋    | 284/498 [00:00<00:00, 2649.28it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  85%|████████▌ | 34/40 [05:14<00:56,  9.38s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 56%|█████▌    | 278/498 [00:00<00:00, 2575.81it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  88%|████████▊ | 35/40 [05:24<00:46,  9.36s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 57%|█████▋    | 284/498 [00:00<00:00, 2499.03it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  90%|█████████ | 36/40 [05:33<00:37,  9.37s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 53%|█████▎    | 266/498 [00:00<00:00, 2221.72it/s][A
+
+ 99%|█████████▉| 494/498 [00:04<00:00, 93.43it/s]  [A
+
+                                                 [A
+PartitionExplainer explainer:  92%|█████████▎| 37/40 [05:43<00:28,  9.49s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 57%|█████▋    | 284/498 [00:00<00:00, 2756.77it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  95%|█████████▌| 38/40 [05:52<00:18,  9.40s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 56%|█████▌    | 278/498 [00:00<00:00, 2309.61it/s][A
+
+                                                   [A
+PartitionExplainer explainer:  98%|█████████▊| 39/40 [06:01<00:09,  9.40s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 55%|█████▍    | 272/498 [00:00<00:00, 2482.54it/s][A
+
+                                                   [A
+PartitionExplainer explainer: 100%|██████████| 40/40 [06:11<00:00,  9.40s/it]
+
+  0%|          | 0/498 [00:00<?, ?it/s][A
+
+ 58%|█████▊    | 290/498 [00:00<00:00, 2626.09it/s][A
+
+                                                   [A
+PartitionExplainer explainer: 41it [06:20,  9.33s/it]                        
+PartitionExplainer explainer: 41it [06:20,  9.51s/it]
+top SHAP tokens: [('57', 0.05170132733312332, 2), ('19', 0.04341326597342286, 15), ('tre', 0.03951379434640716, 2), ('variety', 0.03842131903677838, 2), ('similar', 0.037561987424287444, 2), ('banks', 0.036348475450150936, 2), ('nz', 0.03342766215987794, 2), ('22', 0.03307959291096324, 9), ('38', 0.03210330572046575, 5), ('majority', 0.030096315328064484, 2), ('56', 0.02992290578396499, 3), ('46', 0.029777236286824358, 4), ('harris', 0.028643335352706557, 2), ('12', 0.0283368494285988, 8), ('easy', 0.02822457471474982, 3)]
+
+  0%|          | 0/498 [00:00<?, ?it/s]
+ 57%|█████▋    | 284/498 [00:00<00:00, 2528.79it/s]
+                                                   
+SHAP analysis complete.
+[pipeline] STAGE figures
+all figures saved to code/../figures
+{
+  "baseline_metrics": {
+    "tfidf_xgboost": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "kappa": 1.0
+    },
+    "word2vec_xgboost": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "kappa": 1.0
+    }
+  },
+  "final_metrics": {
+    "bert_no_hpo": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "kappa": 1.0
+    },
+    "bert_manual_tuning": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "kappa": 1.0
+    },
+    "dynamic_bert_hho": {
+      "accuracy": 0.9989733059548255,
+      "precision": 0.9982758620689656,
+      "recall": 1.0,
+      "f1": 0.999137187230371,
+      "roc_auc": 1.0,
+      "kappa": 0.9978697624369568
+    }
+  },
+  "final_hp": {
+    "bert_no_hpo": {
+      "lr": 5e-05,
+      "batch_size": 16,
+      "dropout": 0.1,
+      "weight_decay": 0.0,
+      "epochs": 1,
+      "trainable_layers": 12
+    },
+    "bert_manual_tuning": {
+      "lr": 2e-05,
+      "batch_size": 16,
+      "dropout": 0.1,
+      "weight_decay": 0.01,
+      "epochs": 2,
+      "trainable_layers": 4
+    },
+    "dynamic_bert_hho": {
+      "lr": 3.82958453975273e-05,
+      "batch_size": 26.865543326646893,
+      "dropout": 0.15124545307021836,
+      "weight_decay": 0.04503859378955671,
+      "epochs": 1.7415960484651625,
+      "trainable_layers": 7.560589933091611
+    }
+  },
+  "final_train_seconds": {
+    "bert_no_hpo": 124.88664126396179,
+    "bert_manual_tuning": 134.19072103500366,
+    "dynamic_bert_hho": 172.90763401985168
+  },
+  "hho_search": {
+    "best_hp": {
+      "lr": 3.82958453975273e-05,
+      "batch_size": 26.865543326646893,
+      "dropout": 0.15124545307021836,
+      "weight_decay": 0.04503859378955671,
+      "epochs": 1.7415960484651625,
+      "trainable_layers": 7.560589933091611
+    },
+    "best_fitness": 0.0,
+    "n_evaluations": 51,
+    "search_train_size": 2000,
+    "search_val_size": 600,
+    "elapsed_seconds": 3825.8480610847473
+  },
+  "confusion_matrix": [
+    [
+      394,
+      1
+    ],
+    [
+      0,
+      579
+    ]
+  ],
+  "shap_top_tokens": [
+    [
+      "57",
+      0.05170132733312332,
+      2
+    ],
+    [
+      "19",
+      0.04341326597342286,
+      15
+    ],
+    [
+      "tre",
+      0.03951379434640716,
+      2
+    ],
+    [
+      "variety",
+      0.03842131903677838,
+      2
+    ],
+    [
+      "similar",
+      0.037561987424287444,
+      2
+    ],
+    [
+      "banks",
+      0.036348475450150936,
+      2
+    ],
+    [
+      "nz",
+      0.03342766215987794,
+      2
+    ],
+    [
+      "22",
+      0.03307959291096324,
+      9
+    ],
+    [
+      "38",
+      0.03210330572046575,
+      5
+    ],
+    [
+      "majority",
+      0.030096315328064484,
+      2
+    ]
+  ]
+}
+[pipeline] ALL_STAGES_COMPLETE

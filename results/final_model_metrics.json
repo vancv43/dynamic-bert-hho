@@ -1,0 +1,59 @@
+{
+  "bert_no_hpo": {
+    "metrics": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "kappa": 1.0
+    },
+    "hp": {
+      "lr": 5e-05,
+      "batch_size": 16,
+      "dropout": 0.1,
+      "weight_decay": 0.0,
+      "epochs": 1,
+      "trainable_layers": 12
+    },
+    "train_seconds": 124.88664126396179
+  },
+  "bert_manual_tuning": {
+    "metrics": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "roc_auc": 1.0,
+      "kappa": 1.0
+    },
+    "hp": {
+      "lr": 2e-05,
+      "batch_size": 16,
+      "dropout": 0.1,
+      "weight_decay": 0.01,
+      "epochs": 2,
+      "trainable_layers": 4
+    },
+    "train_seconds": 134.19072103500366
+  },
+  "dynamic_bert_hho": {
+    "metrics": {
+      "accuracy": 0.9989733059548255,
+      "precision": 0.9982758620689656,
+      "recall": 1.0,
+      "f1": 0.999137187230371,
+      "roc_auc": 1.0,
+      "kappa": 0.9978697624369568
+    },
+    "hp": {
+      "lr": 3.82958453975273e-05,
+      "batch_size": 26.865543326646893,
+      "dropout": 0.15124545307021836,
+      "weight_decay": 0.04503859378955671,
+      "epochs": 1.7415960484651625,
+      "trainable_layers": 7.560589933091611
+    },
+    "train_seconds": 172.90763401985168
+  }
+}

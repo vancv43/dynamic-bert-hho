@@ -1,0 +1,175 @@
+search subsample 2000/600, positives 0.645/0.532, rows identical to a LOSO test row: 0
+  HHO eval#1 fit=0.0020 acc=0.9983 f1=0.9984 kappa=0.9967 elapsed=43s
+  HHO eval#2 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=117s
+  HHO eval#3 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=161s
+  HHO eval#4 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=263s
+  HHO eval#5 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=301s
+  HHO eval#6 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=349s
+[HHO] init best fitness=0.0000 hp={'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611}
+  HHO eval#7 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=384s
+  HHO eval#8 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=462s
+  HHO eval#9 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=542s
+  HHO eval#10 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=575s
+  HHO eval#11 fit=0.0409 acc=0.9650 f1=0.9681 kappa=0.9294 elapsed=603s
+  HHO eval#12 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=681s
+  HHO eval#13 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=762s
+  HHO eval#14 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=841s
+  HHO eval#15 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=876s
+[HHO] iter 1/4 best fitness=0.0000 hp={'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611}
+  HHO eval#16 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=954s
+  HHO eval#17 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=1028s
+  HHO eval#18 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=1105s
+  HHO eval#19 fit=0.0039 acc=0.9967 f1=0.9969 kappa=0.9933 elapsed=1178s
+  HHO eval#20 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=1253s
+  HHO eval#21 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=1310s
+  HHO eval#22 fit=0.0962 acc=0.9167 f1=0.9273 kappa=0.8309 elapsed=1345s
+  HHO eval#23 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=1408s
+  HHO eval#24 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=1485s
+  HHO eval#25 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=1524s
+  HHO eval#26 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=1601s
+  HHO eval#27 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=1677s
+[HHO] iter 2/4 best fitness=0.0000 hp={'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611}
+  HHO eval#28 fit=0.1782 acc=0.8433 f1=0.8716 kappa=0.6790 elapsed=1706s
+  HHO eval#29 fit=0.1381 acc=0.8800 f1=0.8968 kappa=0.7559 elapsed=1732s
+  HHO eval#30 fit=0.1432 acc=0.8750 f1=0.8945 kappa=0.7450 elapsed=1761s
+  HHO eval#31 fit=0.0699 acc=0.9400 f1=0.9459 kappa=0.8788 elapsed=1829s
+  HHO eval#32 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=1902s
+  HHO eval#33 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=1938s
+  HHO eval#34 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2015s
+  HHO eval#35 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2062s
+  HHO eval#36 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2136s
+  HHO eval#37 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2227s
+  HHO eval#38 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2300s
+  HHO eval#39 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2412s
+[HHO] iter 3/4 best fitness=0.0000 hp={'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611}
+  HHO eval#40 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2477s
+  HHO eval#41 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2541s
+  HHO eval#42 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2609s
+  HHO eval#43 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2678s
+  HHO eval#44 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2752s
+  HHO eval#45 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2815s
+  HHO eval#46 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=2890s
+  HHO eval#47 fit=0.0020 acc=0.9983 f1=0.9984 kappa=0.9967 elapsed=2964s
+  HHO eval#48 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=3039s
+  HHO eval#49 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=3076s
+  HHO eval#50 fit=0.0000 acc=1.0000 f1=1.0000 kappa=1.0000 elapsed=3150s
+  HHO eval#51 fit=0.0620 acc=0.9467 f1=0.9522 kappa=0.8922 elapsed=3180s
+[HHO] iter 4/4 best fitness=0.0000 hp={'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611}
+STAGE1_DONE {'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611} 0.0
+  RS eval#1 fit=0.0039 best=0.0039 elapsed=41s
+  RS eval#2 fit=0.0000 best=0.0000 elapsed=115s
+  RS eval#3 fit=0.0000 best=0.0000 elapsed=159s
+  RS eval#4 fit=0.0000 best=0.0000 elapsed=261s
+  RS eval#5 fit=0.0000 best=0.0000 elapsed=299s
+  RS eval#6 fit=0.0000 best=0.0000 elapsed=347s
+  RS eval#7 fit=0.0000 best=0.0000 elapsed=419s
+  RS eval#8 fit=0.0020 best=0.0000 elapsed=477s
+  RS eval#9 fit=0.0000 best=0.0000 elapsed=582s
+  RS eval#10 fit=0.0000 best=0.0000 elapsed=608s
+  RS eval#11 fit=0.0000 best=0.0000 elapsed=669s
+  RS eval#12 fit=0.0000 best=0.0000 elapsed=701s
+  RS eval#13 fit=0.0000 best=0.0000 elapsed=770s
+  RS eval#14 fit=0.0000 best=0.0000 elapsed=841s
+  RS eval#15 fit=0.0039 best=0.0000 elapsed=877s
+  RS eval#16 fit=0.0000 best=0.0000 elapsed=941s
+  RS eval#17 fit=0.0000 best=0.0000 elapsed=1049s
+  RS eval#18 fit=0.0020 best=0.0000 elapsed=1103s
+  RS eval#19 fit=0.0000 best=0.0000 elapsed=1161s
+  RS eval#20 fit=0.0000 best=0.0000 elapsed=1225s
+  RS eval#21 fit=0.0000 best=0.0000 elapsed=1257s
+  RS eval#22 fit=0.0000 best=0.0000 elapsed=1302s
+  RS eval#23 fit=0.0000 best=0.0000 elapsed=3124s
+  RS eval#24 fit=0.0000 best=0.0000 elapsed=3226s
+  RS eval#25 fit=0.0000 best=0.0000 elapsed=3274s
+  RS eval#26 fit=0.0000 best=0.0000 elapsed=3308s
+  RS eval#27 fit=0.0020 best=0.0000 elapsed=3346s
+  RS eval#28 fit=0.0000 best=0.0000 elapsed=3474s
+  RS eval#29 fit=0.0000 best=0.0000 elapsed=3549s
+  RS eval#30 fit=0.0000 best=0.0000 elapsed=3673s
+  RS eval#31 fit=0.0000 best=0.0000 elapsed=3768s
+  RS eval#32 fit=0.0020 best=0.0000 elapsed=3849s
+  RS eval#33 fit=0.0000 best=0.0000 elapsed=3918s
+  RS eval#34 fit=0.0059 best=0.0000 elapsed=3970s
+  RS eval#35 fit=0.0039 best=0.0000 elapsed=4005s
+  RS eval#36 fit=0.0000 best=0.0000 elapsed=4070s
+  RS eval#37 fit=0.0868 best=0.0000 elapsed=4137s
+  RS eval#38 fit=0.0000 best=0.0000 elapsed=4169s
+  RS eval#39 fit=0.0000 best=0.0000 elapsed=4275s
+  RS eval#40 fit=0.0000 best=0.0000 elapsed=4303s
+  RS eval#41 fit=0.0000 best=0.0000 elapsed=4378s
+  RS eval#42 fit=0.0000 best=0.0000 elapsed=4455s
+  RS eval#43 fit=0.0000 best=0.0000 elapsed=4535s
+  RS eval#44 fit=0.0000 best=0.0000 elapsed=4585s
+  RS eval#45 fit=0.0000 best=0.0000 elapsed=4612s
+  RS eval#46 fit=0.0000 best=0.0000 elapsed=4672s
+  RS eval#47 fit=0.0754 best=0.0000 elapsed=4702s
+  RS eval#48 fit=0.0000 best=0.0000 elapsed=4734s
+  RS eval#49 fit=0.0000 best=0.0000 elapsed=4816s
+  RS eval#50 fit=0.0020 best=0.0000 elapsed=5088s
+  RS eval#51 fit=0.0020 best=0.0000 elapsed=5184s
+RS_DONE {'lr': 3.82958453975273e-05, 'batch_size': 26.865543326646893, 'dropout': 0.15124545307021836, 'weight_decay': 0.04503859378955671, 'epochs': 1.7415960484651625, 'trainable_layers': 7.560589933091611} 0.0
+  META eval#1 fit=0.0000 elapsed=74s
+  META eval#2 fit=0.0000 elapsed=149s
+  META eval#3 fit=0.0000 elapsed=224s
+  META eval#4 fit=0.0000 elapsed=298s
+[HHO-Meta] init best fitness=0.0000 hp={'fusion_hidden': 100.8747258267156, 'fusion_dropout': 0.21943921987602616}
+  META eval#5 fit=0.0000 elapsed=374s
+  META eval#6 fit=0.0000 elapsed=451s
+  META eval#7 fit=0.0000 elapsed=525s
+  META eval#8 fit=0.0000 elapsed=601s
+  META eval#9 fit=0.0000 elapsed=679s
+  META eval#10 fit=0.0000 elapsed=754s
+[HHO-Meta] iter 1/2 best fitness=0.0000 hp={'fusion_hidden': 100.8747258267156, 'fusion_dropout': 0.21943921987602616}
+  META eval#11 fit=0.0000 elapsed=829s
+  META eval#12 fit=0.0000 elapsed=905s
+  META eval#13 fit=0.0000 elapsed=980s
+  META eval#14 fit=0.0000 elapsed=1057s
+  META eval#15 fit=0.0000 elapsed=1131s
+  META eval#16 fit=0.0000 elapsed=1206s
+  META eval#17 fit=0.0000 elapsed=1282s
+  META eval#18 fit=0.0000 elapsed=1356s
+[HHO-Meta] iter 2/2 best fitness=0.0000 hp={'fusion_hidden': 100.8747258267156, 'fusion_dropout': 0.21943921987602616}
+STAGE2_DONE {'fusion_hidden': 100.8747258267156, 'fusion_dropout': 0.21943921987602616} 0.0
+SEARCHES_DONE
+[seed 1] bert_rs: rec=0.000 prec=0.000 f1=0.000 auc=0.9957 train=178s infer=3.37s
+[seed 1] bert_hho: rec=0.000 prec=0.000 f1=0.000 auc=0.9957 train=178s infer=3.38s
+[seed 1] bert_hho_meta_defaultfusion: rec=0.362 prec=1.000 f1=0.532 auc=0.9982 train=180s infer=3.49s
+[seed 1] bert_hho_meta: rec=0.058 prec=1.000 f1=0.110 auc=0.9990 train=178s infer=3.28s
+[seed 2] bert_rs: rec=1.000 prec=0.945 f1=0.972 auc=0.9974 train=177s infer=3.30s
+[seed 2] bert_hho: rec=1.000 prec=0.945 f1=0.972 auc=0.9974 train=176s infer=3.31s
+[seed 2] bert_hho_meta_defaultfusion: rec=0.986 prec=0.986 f1=0.986 auc=0.9987 train=179s infer=3.44s
+[seed 2] bert_hho_meta: rec=0.391 prec=0.964 f1=0.557 auc=0.9980 train=186s infer=3.63s
+[seed 3] bert_rs: rec=0.710 prec=0.980 f1=0.824 auc=0.9971 train=201s infer=3.72s
+[seed 3] bert_hho: rec=0.710 prec=0.980 f1=0.824 auc=0.9971 train=217s infer=4.02s
+[seed 3] bert_hho_meta_defaultfusion: rec=0.710 prec=1.000 f1=0.831 auc=0.9997 train=206s infer=4.19s
+[seed 3] bert_hho_meta: rec=0.174 prec=0.923 f1=0.293 auc=0.9962 train=191s infer=4.33s
+[seed 4] bert_rs: rec=1.000 prec=0.986 f1=0.993 auc=1.0000 train=196s infer=3.35s
+[seed 4] bert_hho: rec=1.000 prec=0.986 f1=0.993 auc=1.0000 train=201s infer=4.43s
+[seed 4] bert_hho_meta_defaultfusion: rec=0.522 prec=0.973 f1=0.679 auc=0.9983 train=198s infer=3.66s
+[seed 4] bert_hho_meta: rec=0.551 prec=0.974 f1=0.704 auc=0.9881 train=196s infer=3.33s
+[seed 5] bert_rs: rec=1.000 prec=0.986 f1=0.993 auc=0.9974 train=187s infer=3.61s
+[seed 5] bert_hho: rec=1.000 prec=0.986 f1=0.993 auc=0.9974 train=199s infer=4.12s
+[seed 5] bert_hho_meta_defaultfusion: rec=0.580 prec=0.976 f1=0.727 auc=0.9988 train=205s infer=3.67s
+[seed 5] bert_hho_meta: rec=0.478 prec=0.971 f1=0.641 auc=0.9980 train=208s infer=3.98s
+[seed 6] bert_rs: rec=0.580 prec=1.000 f1=0.734 auc=0.9990 train=208s infer=3.95s
+[seed 6] bert_hho: rec=0.580 prec=1.000 f1=0.734 auc=0.9990 train=202s infer=3.84s
+[seed 6] bert_hho_meta_defaultfusion: rec=0.116 prec=0.889 f1=0.205 auc=0.9957 train=196s infer=3.36s
+[seed 6] bert_hho_meta: rec=0.217 prec=0.938 f1=0.353 auc=0.9974 train=192s infer=3.53s
+[seed 7] bert_rs: rec=0.014 prec=1.000 f1=0.029 auc=0.9982 train=178s infer=3.37s
+[seed 7] bert_hho: rec=0.014 prec=1.000 f1=0.029 auc=0.9982 train=186s infer=3.58s
+[seed 7] bert_hho_meta_defaultfusion: rec=0.000 prec=0.000 f1=0.000 auc=0.9185 train=204s infer=3.89s
+[seed 7] bert_hho_meta: rec=0.638 prec=0.978 f1=0.772 auc=0.9983 train=206s infer=4.17s
+[seed 8] bert_rs: rec=0.014 prec=1.000 f1=0.029 auc=0.9974 train=182s infer=3.35s
+[seed 8] bert_hho: rec=0.014 prec=1.000 f1=0.029 auc=0.9974 train=175s infer=3.24s
+[seed 8] bert_hho_meta_defaultfusion: rec=0.159 prec=0.917 f1=0.272 auc=0.9975 train=187s infer=3.59s
+[seed 8] bert_hho_meta: rec=0.899 prec=0.984 f1=0.939 auc=0.9981 train=189s infer=3.51s
+[seed 9] bert_rs: rec=0.797 prec=1.000 f1=0.887 auc=0.9998 train=179s infer=3.36s
+[seed 9] bert_hho: rec=0.797 prec=1.000 f1=0.887 auc=0.9998 train=173s infer=3.26s
+[seed 9] bert_hho_meta_defaultfusion: rec=1.000 prec=0.986 f1=0.993 auc=0.9999 train=174s infer=3.25s
+[seed 9] bert_hho_meta: rec=0.000 prec=0.000 f1=0.000 auc=0.8485 train=174s infer=3.26s
+[seed 10] bert_rs: rec=0.029 prec=0.667 f1=0.056 auc=0.9971 train=173s infer=3.24s
+[seed 10] bert_hho: rec=0.029 prec=0.667 f1=0.056 auc=0.9971 train=174s infer=3.25s
+[seed 10] bert_hho_meta_defaultfusion: rec=0.246 prec=1.000 f1=0.395 auc=0.9979 train=174s infer=3.27s
+[seed 10] bert_hho_meta: rec=0.928 prec=0.985 f1=0.955 auc=0.9997 train=174s infer=3.25s
+ABLATION_DONE
+RERUN_ALL_DONE

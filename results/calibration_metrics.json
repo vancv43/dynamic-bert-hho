@@ -1,0 +1,27 @@
+{
+  "tfidf_xgboost": {
+    "brier": 8.9e-05,
+    "log_loss": 0.000974,
+    "ece": 0.000919
+  },
+  "word2vec_xgboost": {
+    "brier": 1.9e-05,
+    "log_loss": 0.000601,
+    "ece": 0.000591
+  },
+  "bert_no_hpo": {
+    "brier": 0.0,
+    "log_loss": 0.000241,
+    "ece": 0.000241
+  },
+  "bert_manual_tuning": {
+    "brier": 0.0,
+    "log_loss": 0.000174,
+    "ece": 0.000173
+  },
+  "dynamic_bert_hho": {
+    "brier": 0.00037,
+    "log_loss": 0.001098,
+    "ece": 0.000772
+  }
+}

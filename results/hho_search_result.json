@@ -1,0 +1,22 @@
+{
+  "best_hp": {
+    "lr": 3.82958453975273e-05,
+    "batch_size": 26.865543326646893,
+    "dropout": 0.15124545307021836,
+    "weight_decay": 0.04503859378955671,
+    "epochs": 1.7415960484651625,
+    "trainable_layers": 7.560589933091611
+  },
+  "best_fitness": 0.0,
+  "history": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "n_evaluations": 51,
+  "search_train_size": 2000,
+  "search_val_size": 600,
+  "elapsed_seconds": 3825.8480610847473
+}
