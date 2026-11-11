@@ -1,6 +1,6 @@
 # Processed data splits
 
-Derived from the CERT Insider Threat Test Dataset r4.2, Carnegie Mellon University Software Engineering Institute, https://doi.org/10.1184/R1/12841247.v1, licensed CC BY 4.0. Columns: `text` (cleaned URL and page content), `label` (1 = malicious), `user`, and, in the grouped and LOSO files, twelve request metadata features.
+Derived from the CERT Insider Threat Test Dataset r4.2, Carnegie Mellon University Software Engineering Institute, https://doi.org/10.1184/R1/12841247.v1, licensed CC BY 4.0. Columns: `text` (cleaned URL and page content), `label` (1 = malicious), `user`, and, in the grouped and LOSO files, a 12-dimensional request metadata representation: seven z-scored numerical attributes and a five-category one-hot encoding of the top-level domain.
 
 | Protocol | Files | Train | Val. | Test | Malicious test users seen in training |
 |---|---|---:|---:|---:|---:|
